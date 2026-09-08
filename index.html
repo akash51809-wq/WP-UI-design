@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>व्हाट्सएप ऑटोमेशन - सिंगल पेज डैशबोर्ड</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="brand-logo"><span>💬</span> व्हाट्सएप ऑटोमेशन</div>
+        <ul class="sidebar-menu" id="sidebarMenu">
+            <li class="active" data-target="dashboard-section"><a><span>🏠</span> डैशबोर्ड</a></li>
+            <li data-target="send-message-section"><a><span>📤</span> Send message</a></li>
+            <li data-target="incoming-section"><a><span>📥</span> Incoming</a></li>
+            <li data-target="reports-section"><a><span>📊</span> Reports (Send SMS)</a></li>
+            <li data-target="msg-report-section"><a><span>📄</span> Msg report</a></li>
+            <li data-target="campaigns-section"><a><span>🛒</span> Campaigns</a></li>
+            <li data-target="templates-section"><a><span>📋</span> Templates</a></li>
+            <li data-target="numbers-section"><a><span>📞</span> Numbers</a></li>
+            <li data-target="settings-section"><a><span>⚙️</span> Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="main-container">
+        <div class="top-navbar">
+            <h1 id="topNavTitle">डैशबोर्ड ओवरव्यू</h1>
+            <div class="user-profile" id="topUserMeta"><span>🟢 सिस्टम कनेक्टेड</span></div>
+        </div>
+
+        <div id="dashboard-section" class="content-body-area active-section">
+            <div class="dashboard-content-wrapper">
+                <div class="active-session-card">
+                    <div class="session-left">
+                        <div class="session-dp-wrapper">
+                            <img src="https://via.placeholder.com/150" alt="WhatsApp DP" class="session-dp" id="sessionDpImg">
+                            <div class="status-dot"></div>
+                        </div>
+                        <div class="session-info">
+                            <h3>Prince Goyal <span class="connected-badge">Connected</span></h3>
+                            <p>📞 +91 98765 43210</p>
+                            <p class="session-id">ID: WA_SESSION_99824</p>
+                        </div>
+                    </div>
+                    <div class="session-right"><div class="session-badge">⚡ Active Session</div></div>
+                </div>
+
+                <div class="stats-grid-5">
+                    <div class="stat-box"><div class="stat-box-top"><div class="stat-icon">💬</div><span class="badge-today">Today</span></div><div class="count">0</div><div class="label">Total Messages</div><div class="stat-progress"><div class="stat-progress-fill"></div></div></div>
+                    <div class="stat-box"><div class="stat-box-top"><div class="stat-icon green">📤</div><span class="badge-today">Today</span></div><div class="count">0</div><div class="label">Messages Sent</div><div class="stat-progress"><div class="stat-progress-fill"></div></div></div>
+                    <div class="stat-box"><div class="stat-box-top"><div class="stat-icon blue">✔️</div><span class="badge-today blue-bg">0%</span></div><div class="count">0</div><div class="label">Delivery Messages</div><div class="stat-progress"><div class="stat-progress-fill blue-fill"></div></div></div>
+                    <div class="stat-box"><div class="stat-box-top"><div class="stat-icon purple">👁️</div><span class="badge-today purple-bg">0%</span></div><div class="count">0</div><div class="label">Read Messages</div><div class="stat-progress"><div class="stat-progress-fill purple-fill"></div></div></div>
+                    <div class="stat-box"><div class="stat-box-top"><div class="stat-icon red">↩️</div><span class="badge-today red-bg">0%</span></div><div class="count">0</div><div class="label">Failed Messages</div><div class="stat-progress"><div class="stat-progress-fill red-fill"></div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="send-message-section" class="content-body-area"><div class="placeholder-page">Send Message पैनल यहाँ उपलब्ध है।</div></div>
+        <div id="incoming-section" class="content-body-area"><div class="placeholder-page">Incoming मैसेजेस पैनल।</div></div>
+
+        <div id="reports-section" class="content-body-area">
+            <div class="filter-panel">
+                <div class="filters-grid">
+                    <div class="filter-group"><label>Top</label><input type="number" class="neu-input" value="50"></div>
+                    <div class="filter-group"><label>From Date</label><input type="date" class="neu-input" value="2026-09-08"></div>
+                    <div class="filter-group"><label>To Date</label><input type="date" class="neu-input" value="2026-09-08"></div>
+                    <div class="filter-group"><label>From Number</label><input type="text" class="neu-input" placeholder="e.g. 9198765..."></div>
+                    <div class="filter-group"><label>To Number</label><input type="text" class="neu-input" placeholder="e.g. 9198392..."></div>
+                    <div class="filter-group"><label>Search Text</label><input type="text" class="neu-input" placeholder="Search message/text..."></div>
+                    <div class="filter-actions"><button class="neu-button primary" title="Search filter">🔍</button><button class="neu-button excel-btn" title="Download Excel">📥 Excel</button></div>
+                </div>
+            </div>
+            <div class="table-card-panel">
+                <div class="table-responsive">
+                    <table><thead><tr><th>SR.NO</th><th>API ID</th><th>API</th><th>MOBILE NO</th><th>MESSAGE</th><th>REQUEST</th><th>RESPONSE</th><th>ENTRY AT</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>15</td><td>FBCLOUD</td><td>919839293425</td><td>*(OTP)* is your verification code. For your security, do not share this code.</td><td><div class="code-snippet">https://graph.facebook.com/v20.0/114028316225762/messages</div></td><td><div class="code-snippet">{"statuscode":1,"Msg":"Success","data":{"MessageId":"wamid.HBgMOTE5ODM5MjkzNDI1M0FROUM5NEVkOTVjMjM0MjlQWnVpMjp5cWFpZHVwV2l0aERldGFpbjpudWxsfQ=="}}</div></td><td class="nowrap">08 Sep 2026<br><span class="muted-small">03:41:21 PM</span></td></tr>
+                        <tr><td>2</td><td>11</td><td>APIBOX</td><td>9839293425</td><td>Your One Time Password(OTP) is 591014.</td><td><div class="code-snippet">https://www.apibox.xyz/api/Action/transact?token=5d9e2a60b7202ff2c8727e3a608d119o&keys=SST&reqid=123456...</div></td><td><div class="code-snippet">{"response":{"OrderId":"A260908154120LRAA","reqid":"123456","recipient_no":"9839293425"}}</div></td><td class="nowrap">08 Sep 2026<br><span class="muted-small">03:41:20 PM</span></td></tr>
+                    </tbody></table>
+                </div>
+                <div class="pagination-footer"><span>Showing 1 to 2 of 2 entries</span><span>Page 1 of 1</span></div>
+            </div>
+        </div>
+
+        <div id="msg-report-section" class="content-body-area"><div class="placeholder-page">Msg Report डेटा पैनल।</div></div>
+        <div id="campaigns-section" class="content-body-area"><div class="placeholder-page">Campaigns मैनेजर पैनल।</div></div>
+        <div id="templates-section" class="content-body-area"><div class="placeholder-page">Templates लिस्ट।</div></div>
+        <div id="numbers-section" class="content-body-area"><div class="placeholder-page">Numbers मैनेजमेंट पैनल।</div></div>
+        <div id="settings-section" class="content-body-area"><div class="placeholder-page">Settings पैनल।</div></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
