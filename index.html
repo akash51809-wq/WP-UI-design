@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>व्हाट्सएप ऑटोमेशन - Premium Dashboard</title>
-<link rel="stylesheet" href="style.css?v=20260908-premium3">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Automation - Premium Dashboard</title>
+<link rel="stylesheet" href="style.css?v=20260908-premium4">
 </head>
 <body>
 <div class="sidebar">
- <div class="brand-logo"><span>💬</span> व्हाट्सएप ऑटोमेशन</div>
+ <div class="brand-logo"><span>💬</span><div><strong>व्हाट्सएप ऑटोमेशन</strong><small>Messaging Suite</small></div></div>
  <ul class="sidebar-menu" id="sidebarMenu">
   <li class="active" data-target="dashboard-section"><a><span>🏠</span> डैशबोर्ड</a></li>
   <li data-target="send-message-section"><a><span>📤</span> Send message</a></li>
@@ -19,9 +20,12 @@
   <li data-target="numbers-section"><a><span>📞</span> Numbers</a></li>
   <li data-target="settings-section"><a><span>⚙️</span> Settings</a></li>
  </ul>
+ <div class="sidebar-status"><span class="status-dot-mini"></span><div><strong>WhatsApp Online</strong><small>All systems operational</small></div></div>
 </div>
+
 <div class="main-container">
- <div class="top-navbar"><h1 id="topNavTitle">डैशबोर्ड ओवरव्यू</h1><div class="user-profile" id="topUserMeta"><span>🟢 सिस्टम कनेक्टेड</span></div></div>
+ <div class="top-navbar"><div class="nav-title-wrap"><span class="nav-glow"></span><h1 id="topNavTitle">डैशबोर्ड ओवरव्यू</h1></div><div class="user-profile" id="topUserMeta"><span class="live-dot"></span> सिस्टम कनेक्टेड</div></div>
+
  <div id="dashboard-section" class="content-body-area active-section">
   <div class="dashboard-content-wrapper">
    <div class="active-session-card"><div class="session-left"><div class="session-dp-wrapper"><img src="https://via.placeholder.com/150" alt="WhatsApp DP" class="session-dp"><div class="status-dot"></div></div><div class="session-info"><h3>Prince Goyal <span class="connected-badge">Connected</span></h3><p>📞 +91 98765 43210</p><p class="session-id">ID: WA_SESSION_99824</p></div></div><div class="session-right"><div class="session-badge">⚡ Active Session</div></div></div>
@@ -34,25 +38,57 @@
    </div>
   </div>
  </div>
+
  <div id="send-message-section" class="content-body-area">
-  <div class="send-page-grid bulk-send-layout">
-   <div class="send-form-card bulk-form-card">
-    <div class="bulk-page-title"><div><div class="eyebrow">MESSAGING CENTER</div><h2>Send WhatsApp Message</h2><p>Send instant messages to one or multiple WhatsApp numbers.</p></div><div class="live-pill">LIVE</div></div>
+  <div class="send-page-grid">
+   <div class="send-form-card">
+    <div class="send-card-head"><div><span class="section-kicker">WHATSAPP MESSAGING</span><h2>Send WhatsApp Message</h2></div><div class="secure-pill"><span></span> Secure session</div></div>
     <div class="send-form-body">
-     <div class="form-field"><label>Choose WhatsApp</label><div class="select-like">📱 <strong>Choose WhatsApp Account</strong><span>+91 98765 43210</span><b>⌄</b></div></div>
-     <div class="form-field"><label>Mobile Number</label><input id="toNumber" class="dark-input" type="text" placeholder="Mobile Number (e.g. 919876543210)"></div>
-     <div class="bulk-actions-row"><button class="neu-button import-btn" type="button">▣ &nbsp; Upload Excel</button><button class="neu-button remove-btn" type="button">▽ &nbsp; Remove Duplicates</button></div>
-     <div class="attachment-line"><div><label>Attachment</label><div class="attach-button" title="Attach file">📎</div></div><span>Optional media / document attachment</span></div>
-     <div class="form-field message-field"><label>Type Message</label><div class="message-editor-wrap"><textarea id="messageBox" class="message-box" rows="8" maxlength="4096" placeholder="Type your bulk message here..."></textarea><div class="editor-toolbar"><span>😊</span><span>📎</span><span class="editor-spacer"></span><small id="charCount">0 / 4096</small><button class="round-send" type="button" title="Send message">➤</button></div></div></div>
+     <div class="form-field account-field"><label>Choose WhatsApp</label><div class="select-shell"><span class="select-icon">◉</span><select id="whatsappAccount"><option value="919876543210">Prince Goyal&nbsp;&nbsp; • &nbsp;&nbsp;+91 98765 43210</option><option value="919812345678">Business Account&nbsp;&nbsp; • &nbsp;&nbsp;+91 98123 45678</option><option value="919123456789">Support Account&nbsp;&nbsp; • &nbsp;&nbsp;+91 91234 56789</option></select><span class="select-arrow">⌄</span></div></div>
+     <div class="recipient-head"><label>Recipient Number</label><span>Single or multiple numbers</span></div>
+     <div class="recipient-input-wrap"><span>＋91</span><input id="toNumber" class="dark-input" type="text" placeholder="Enter WhatsApp number(s), separated by comma"></div>
+     <div class="bulk-actions-row"><button class="neu-button import-btn" id="uploadExcelBtn" type="button"><span>▣</span> Upload Excel</button><button class="neu-button remove-btn" id="removeDuplicatesBtn" type="button"><span>⌘</span> Remove Duplicates</button><input id="excelInput" type="file" accept=".xlsx,.xls,.csv" hidden></div>
+
+     <div class="message-field">
+      <div class="message-label-row"><label>Type Message</label><span id="charCount">0 / 4096</span></div>
+      <div class="message-editor-wrap">
+       <textarea id="messageBox" class="message-box" rows="9" maxlength="4096" placeholder="Write your WhatsApp message here..."></textarea>
+       <div class="editor-bottom">
+        <div class="editor-tools"><button id="emojiBtn" class="tool-btn" type="button" title="Emoji">😊</button><button id="attachBtn" class="tool-btn" type="button" title="Attach file">📎</button><button id="scheduleBtn" class="tool-btn schedule-tool" type="button" title="Schedule message">◷</button><input id="attachmentInput" type="file" hidden></div>
+        <div class="send-controls"><span id="scheduleStatus" class="schedule-status">Send now</span><button id="sendMessageBtn" class="round-send" type="button" title="Send message">➤</button></div>
+       </div>
+       <div id="schedulePanel" class="schedule-panel"><div><strong>Schedule message</strong><small>Choose date & time</small></div><input id="scheduleDateTime" type="datetime-local"><button id="applyScheduleBtn" type="button">Set</button></div>
+      </div>
+     </div>
+     <div class="message-tip"><span>✦</span> Messages are sent through your selected WhatsApp session.</div>
     </div>
    </div>
+
    <div class="send-side-stack">
-    <div class="info-card preview-info-card"><div class="info-card-title"><div><span class="card-kicker">LIVE PREVIEW</span><h3>Message Preview</h3></div><span class="signal-dot"></span></div><div class="preview-message" id="previewMessage">नमस्ते! यह आपका भेजा जाने वाला बल्क मैसेज का लाइव प्रीव्यू है। संदेश यहाँ इसी प्रकार दिखाई देगा।</div></div>
-    <div class="info-card how-card"><div class="card-kicker">QUICK GUIDE</div><h3>How to Use</h3><div class="guide-step"><strong>1</strong><p>अपना WhatsApp account चुनें।</p></div><div class="guide-step"><strong>2</strong><p>Mobile number डालें या Excel upload करें।</p></div><div class="guide-step"><strong>3</strong><p>अपना message type करें और send button दबाएँ।</p></div></div>
-    <div class="info-card status-mini"><div><span>Session Status</span><strong>Connected</strong></div><div class="status-ring">✓</div></div>
+    <div class="info-card preview-info-card">
+     <div class="info-card-title"><div><span class="card-kicker">LIVE PREVIEW</span><h3>WhatsApp Preview</h3></div><span class="signal-dot"></span></div>
+     <div class="phone-preview">
+      <div class="chat-preview-top"><div class="mini-avatar">PG</div><div><strong>WhatsApp</strong><small id="previewNumber">+91 98765 43210</small></div><span class="top-more">⋮</span></div>
+      <div class="chat-wall"><div class="date-chip">TODAY</div><div class="preview-bubble" id="previewMessage">Your message preview will appear here...</div><span class="preview-time">12:30 PM&nbsp; ✓✓</span></div>
+     </div>
+    </div>
+
+    <div class="info-card how-card">
+     <div class="card-kicker">QUICK GUIDE</div><h3>How to send message</h3>
+     <div class="guide-step"><div class="step-number">01</div><div><strong>Choose WhatsApp</strong><p>Select the WhatsApp number you want to send from.</p></div></div>
+     <div class="guide-line"></div>
+     <div class="guide-step"><div class="step-number">02</div><div><strong>Add recipient</strong><p>Enter one or multiple WhatsApp numbers.</p></div></div>
+     <div class="guide-line"></div>
+     <div class="guide-step"><div class="step-number">03</div><div><strong>Write your message</strong><p>Type your text and add emoji or attachment if needed.</p></div></div>
+     <div class="guide-line"></div>
+     <div class="guide-step"><div class="step-number">04</div><div><strong>Send or schedule</strong><p>Tap <b>➤</b> to send now, or use <b>◷</b> to choose a date and time.</p></div></div>
+    </div>
+
+    <div class="info-card status-mini"><div class="status-copy"><span>SESSION STATUS</span><strong><i></i> Connected</strong></div><div class="status-ring">✓</div></div>
    </div>
   </div>
  </div>
+
  <div id="incoming-section" class="content-body-area"><div class="placeholder-page">Incoming मैसेजेस पैनल।</div></div>
  <div id="reports-section" class="content-body-area">
   <div class="filter-panel"><div class="filters-grid"><div class="filter-group"><label>Top</label><input type="number" class="neu-input" value="50"></div><div class="filter-group"><label>From Date</label><input type="date" class="neu-input" value="2026-09-08"></div><div class="filter-group"><label>To Date</label><input type="date" class="neu-input" value="2026-09-08"></div><div class="filter-group"><label>From Number</label><input type="text" class="neu-input" placeholder="e.g. 9198765..."></div><div class="filter-group"><label>To Number</label><input type="text" class="neu-input" placeholder="e.g. 9198392..."></div><div class="filter-group"><label>Search Text</label><input type="text" class="neu-input" placeholder="Search message/text..."></div><div class="filter-actions"><button class="neu-button primary">🔍</button><button class="neu-button excel-btn">📥 Excel</button></div></div></div>
@@ -64,6 +100,6 @@
  <div id="numbers-section" class="content-body-area"><div class="placeholder-page">Numbers मैनेजमेंट पैनल।</div></div>
  <div id="settings-section" class="content-body-area"><div class="placeholder-page">Settings पैनल।</div></div>
 </div>
-<script src="script.js?v=20260908-premium3"></script>
+<script src="script.js?v=20260908-premium4"></script>
 </body>
 </html>
