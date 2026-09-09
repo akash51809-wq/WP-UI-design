@@ -7,59 +7,32 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260909-reference1">
-<link rel="stylesheet" href="settings.css?v=20260909-reference1">
+<link rel="stylesheet" href="style.css?v=20260909-reference2">
+<link rel="stylesheet" href="settings.css?v=20260909-reference2">
 </head>
 <body>
 <div class="app-shell">
 <aside class="sidebar" id="sidebar">
-  <div class="brand">
-    <div class="brand-mark">↗</div>
-    <div><strong>WhatsApp Pro</strong><small>Messaging Suite</small></div>
-  </div>
-  <nav>
-    <div class="nav-label">MAIN MENU</div>
-    <ul id="sidebarMenu">
-      <li class="active" data-target="dashboard-section"><a><span>⌂</span>Dashboard</a></li>
-      <li data-target="send-message-section"><a><span>↗</span>Send Message</a></li>
-      <li data-target="incoming-section"><a><span>◫</span>Incoming</a></li>
-      <li data-target="reports-section"><a><span>▤</span>Reports <em>Send</em></a></li>
-      <li data-target="msg-report-section"><a><span>▥</span>Message Report</a></li>
-      <li data-target="campaigns-section"><a><span>◇</span>Campaigns</a></li>
-      <li data-target="templates-section"><a><span>▦</span>Templates</a></li>
-      <li data-target="numbers-section"><a><span>▱</span>Numbers</a></li>
-    </ul>
-    <div class="nav-label secondary">SYSTEM</div>
-    <ul>
-      <li data-target="settings-section"><a><span>⚙</span>Settings</a></li>
-      <li><a href="#" onclick="return false"><span>?</span>Support</a></li>
-    </ul>
-  </nav>
-  <div class="sidebar-promo">
-    <div class="promo-icon">✦</div>
-    <strong>Messaging made simple</strong>
-    <p>Manage WhatsApp conversations, campaigns and reports from one place.</p>
-    <button onclick="document.querySelector('[data-target=\'send-message-section\']')?.click()">Send Message <span>→</span></button>
-  </div>
-  <div class="sidebar-user">
-    <div class="mini-avatar">PG</div><div><strong>Prince Goyal</strong><small>Super Admin</small></div><span>⋮</span>
-  </div>
+  <div class="brand"><div class="brand-mark">↗</div><div><strong>WhatsApp Pro</strong><small>Messaging Suite</small></div></div>
+  <nav><div class="nav-label">MAIN MENU</div><ul id="sidebarMenu">
+    <li class="active" data-target="dashboard-section"><a><span>⌂</span>Dashboard</a></li>
+    <li data-target="send-message-section"><a><span>↗</span>Send Message</a></li>
+    <li data-target="incoming-section"><a><span>◫</span>Incoming</a></li>
+    <li data-target="reports-section"><a><span>▤</span>Reports <em>Send</em></a></li>
+    <li data-target="msg-report-section"><a><span>▥</span>Message Report</a></li>
+    <li data-target="campaigns-section"><a><span>◇</span>Campaigns</a></li>
+    <li data-target="templates-section"><a><span>▦</span>Templates</a></li>
+    <li data-target="numbers-section"><a><span>▱</span>Numbers</a></li>
+  </ul><div class="nav-label secondary">SYSTEM</div><ul><li data-target="settings-section"><a><span>⚙</span>Settings</a></li><li><a href="#" onclick="return false"><span>?</span>Support</a></li></ul></nav>
+  <div class="sidebar-promo"><div class="promo-icon">✦</div><strong>Messaging made simple</strong><p>Manage WhatsApp conversations, campaigns and reports from one place.</p><button onclick="document.querySelector('[data-target=\'send-message-section\']')?.click()">Send Message <span>→</span></button></div>
+  <div class="sidebar-user"><div class="mini-avatar">PG</div><div><strong>Prince Goyal</strong><small>Super Admin</small></div><span>⋮</span></div>
 </aside>
-
 <main class="main-container">
-<header class="topbar">
-  <div class="topbar-left"><button class="icon-btn menu-toggle" id="menuToggle">☰</button><div class="global-search"><span>⌕</span><input placeholder="Search mobile number, contact, message..."/><kbd>Ctrl K</kbd></div></div>
-  <div class="top-actions"><button class="icon-btn">☼</button><button class="icon-btn notify">♧<b>8</b></button><button class="icon-btn notify">▢<b>3</b></button><button class="icon-btn">⛶</button><div class="top-user"><div class="mini-avatar">PG</div><div><strong>Prince Goyal</strong><small>Super Admin</small></div><span>⌄</span></div></div>
-</header>
+<header class="topbar"><div class="topbar-left"><button class="icon-btn menu-toggle" id="menuToggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button><div class="global-search"><span>⌕</span><input placeholder="Search mobile number, contact, message..."/><kbd>Ctrl K</kbd></div><span id="topNavTitle" hidden>Dashboard</span></div><div class="top-actions"><button class="icon-btn">☼</button><button class="icon-btn notify">♧<b>8</b></button><button class="icon-btn notify">▢<b>3</b></button><button class="icon-btn">⛶</button><div class="top-user"><div class="mini-avatar">PG</div><div><strong>Prince Goyal</strong><small>Super Admin</small></div><span>⌄</span></div><span id="topUserMeta" hidden>System Connected</span></div></header>
 
 <section id="dashboard-section" class="content-body-area active-section">
   <div class="page-heading"><div><span class="eyebrow">OVERVIEW</span><h1>Dashboard</h1><p>Welcome back, Prince. Here's what's happening with your WhatsApp accounts.</p></div><div class="heading-actions"><span class="online-pill"><i></i> All systems operational</span><button class="primary-btn" onclick="document.querySelector('[data-target=\'send-message-section\']')?.click()">＋ New Message</button></div></div>
-
-  <div class="session-banner">
-    <div class="session-person"><div class="session-avatar">PG<i></i></div><div><span class="eyebrow">ACTIVE WHATSAPP SESSION</span><h3>Prince Goyal <span>Connected</span></h3><p>+91 98765 43210 · WA_SESSION_99824</p></div></div>
-    <div class="session-meta"><div><small>Uptime</small><strong>12d 08h</strong></div><div><small>Messages today</small><strong>1,248</strong></div><button>Manage session →</button></div>
-  </div>
-
+  <div class="session-banner"><div class="session-person"><div class="session-avatar">PG<i></i></div><div><span class="eyebrow">ACTIVE WHATSAPP SESSION</span><h3>Prince Goyal <span>Connected</span></h3><p>+91 98765 43210 · WA_SESSION_99824</p></div></div><div class="session-meta"><div><small>Uptime</small><strong>12d 08h</strong></div><div><small>Messages today</small><strong>1,248</strong></div><button>Manage session →</button></div></div>
   <div class="stats-grid">
     <article class="stat-card"><div class="stat-top"><div class="stat-icon orange">◫</div><span class="trend up">↗ 12.45%</span></div><small>Total Messages</small><strong>1,24,580</strong><p>vs. 1,10,820 last month</p></article>
     <article class="stat-card"><div class="stat-top"><div class="stat-icon green">↗</div><span class="trend up">↗ 15.62%</span></div><small>Messages Sent</small><strong>1,18,450</strong><p>vs. 1,02,430 last month</p></article>
@@ -67,18 +40,14 @@
     <article class="stat-card"><div class="stat-top"><div class="stat-icon purple">◉</div><span class="trend up">↗ 6.18%</span></div><small>Read Messages</small><strong>98,240</strong><p>83.99% read rate</p></article>
     <article class="stat-card"><div class="stat-top"><div class="stat-icon red">↩</div><span class="trend down">↘ 2.35%</span></div><small>Failed Messages</small><strong>6,130</strong><p>4.92% of total messages</p></article>
   </div>
-
   <div class="dashboard-grid">
     <article class="panel chart-panel"><div class="panel-head"><div><span class="eyebrow">MESSAGE ANALYTICS</span><h2>Message Activity</h2></div><select><option>This Month</option><option>Last Month</option><option>This Week</option></select></div><div class="chart-legend"><span><i class="sent-dot"></i>Sent <b>1,18,450</b></span><span><i class="incoming-dot"></i>Incoming <b>6,130</b></span></div><div class="chart-wrap"><div class="y-axis"><span>50K</span><span>40K</span><span>30K</span><span>20K</span><span>10K</span><span>0</span></div><div class="chart"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 700 280" preserveAspectRatio="none" aria-label="Message activity chart"><defs><linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff6b1a" stop-opacity=".28"/><stop offset="1" stop-color="#ff6b1a" stop-opacity=".02"/></linearGradient></defs><path d="M0,235 C35,230 55,180 90,184 S135,230 175,205 S215,150 260,160 S300,218 345,195 S390,205 430,177 S475,75 520,105 S565,180 610,150 S660,135 700,142 L700,280 L0,280 Z" fill="url(#areaFill)"/><path d="M0,235 C35,230 55,180 90,184 S135,230 175,205 S215,150 260,160 S300,218 345,195 S390,205 430,177 S475,75 520,105 S565,180 610,150 S660,135 700,142" fill="none" stroke="#ff6414" stroke-width="3" stroke-linecap="round"/><g fill="#fff" stroke="#ff6414" stroke-width="3"><circle cx="0" cy="235" r="5"/><circle cx="90" cy="184" r="5"/><circle cx="175" cy="205" r="5"/><circle cx="260" cy="160" r="5"/><circle cx="345" cy="195" r="5"/><circle cx="430" cy="177" r="5"/><circle cx="520" cy="105" r="5"/><circle cx="610" cy="150" r="5"/><circle cx="700" cy="142" r="5"/></g></svg><div class="x-axis"><span>01 May</span><span>05 May</span><span>10 May</span><span>15 May</span><span>20 May</span><span>25 May</span><span>30 May</span></div></div></div></article>
-    <article class="panel quick-panel"><div class="panel-head"><div><span class="eyebrow">SHORTCUTS</span><h2>Quick Actions</h2></div><a>View All</a></div><div class="quick-grid"><button><span class="quick-icon orange">↗</span><strong>Send Message</strong><small>Single / bulk</small></button><button><span class="quick-icon green">◫</span><strong>Incoming</strong><small>Live inbox</small></button><button><span class="quick-icon blue">▣</span><strong>Campaign</strong><small>Start campaign</small></button><button><span class="quick-icon purple">▦</span><strong>Templates</strong><small>Message templates</small></button><button><span class="quick-icon cyan">＋</span><strong>Add Number</strong><small>New session</small></button><button><span class="quick-icon red">▤</span><strong>Reports</strong><small>View analytics</small></button></div></article>
+    <article class="panel quick-panel"><div class="panel-head"><div><span class="eyebrow">SHORTCUTS</span><h2>Quick Actions</h2></div><a>View All</a></div><div class="quick-grid"><button onclick="document.querySelector('[data-target=\'send-message-section\']')?.click()"><span class="quick-icon orange">↗</span><strong>Send Message</strong><small>Single / bulk</small></button><button onclick="document.querySelector('[data-target=\'incoming-section\']')?.click()"><span class="quick-icon green">◫</span><strong>Incoming</strong><small>Live inbox</small></button><button onclick="document.querySelector('[data-target=\'campaigns-section\']')?.click()"><span class="quick-icon blue">▣</span><strong>Campaign</strong><small>Start campaign</small></button><button onclick="document.querySelector('[data-target=\'templates-section\']')?.click()"><span class="quick-icon purple">▦</span><strong>Templates</strong><small>Message templates</small></button><button onclick="document.querySelector('[data-target=\'numbers-section\']')?.click()"><span class="quick-icon cyan">＋</span><strong>Add Number</strong><small>New session</small></button><button onclick="document.querySelector('[data-target=\'reports-section\']')?.click()"><span class="quick-icon red">▤</span><strong>Reports</strong><small>View analytics</small></button></div></article>
   </div>
-
   <div class="lower-grid">
     <article class="panel transactions-panel"><div class="panel-head"><div><span class="eyebrow">LATEST ACTIVITY</span><h2>Recent Messages</h2></div><a>View All →</a></div><div class="table-scroll"><table><thead><tr><th>#</th><th>Contact</th><th>Message</th><th>Type</th><th>Status</th><th>Date & Time</th><th></th></tr></thead><tbody><tr><td>1</td><td><div class="contact-cell"><span class="contact-avatar orange">RS</span><strong>Rahul Sharma</strong></div></td><td>Hello, is my order ready?</td><td><span class="type-pill">Incoming</span></td><td><span class="status success">Delivered</span></td><td>30 May 2026, 10:42 AM</td><td>⋮</td></tr><tr><td>2</td><td><div class="contact-cell"><span class="contact-avatar green">AS</span><strong>Airtel Distributor</strong></div></td><td>Price list has been updated.</td><td><span class="type-pill">Outgoing</span></td><td><span class="status success">Read</span></td><td>30 May 2026, 10:18 AM</td><td>⋮</td></tr><tr><td>3</td><td><div class="contact-cell"><span class="contact-avatar blue">RK</span><strong>Ravi Kumar</strong></div></td><td>📷 Photo attachment</td><td><span class="type-pill">Incoming</span></td><td><span class="status success">Delivered</span></td><td>30 May 2026, 10:15 AM</td><td>⋮</td></tr><tr><td>4</td><td><div class="contact-cell"><span class="contact-avatar purple">NV</span><strong>Neha Verma</strong></div></td><td>Thanks for the update 👍</td><td><span class="type-pill">Outgoing</span></td><td><span class="status pending">Pending</span></td><td>30 May 2026, 10:05 AM</td><td>⋮</td></tr><tr><td>5</td><td><div class="contact-cell"><span class="contact-avatar red">BS</span><strong>Business Support</strong></div></td><td>Meeting at 5 PM today.</td><td><span class="type-pill">Incoming</span></td><td><span class="status failed">Failed</span></td><td>30 May 2026, 09:58 AM</td><td>⋮</td></tr></tbody></table></div></article>
-    <aside class="side-stack"><article class="panel wallet-panel"><div class="panel-head"><div><span class="eyebrow">SESSION SUMMARY</span><h2>WhatsApp Accounts</h2></div><a>View All</a></div><div class="wallet-total"><div class="wallet-icon">◉</div><div><small>Connected Accounts</small><strong>3</strong></div><span>+1 this month</span></div><div class="account-row"><span class="account-dot online"></span><div><strong>Prince Goyal</strong><small>+91 98765 43210</small></div><b>Online</b></div><div class="account-row"><span class="account-dot online"></span><div><strong>Business Account</strong><small>+91 98123 45678</small></div><b>Online</b></div><div class="account-row"><span class="account-dot offline"></span><div><strong>Support Account</strong><small>+91 91234 56789</small></div><b>Offline</b></div><button class="wide-btn">＋ Add WhatsApp Account →</button></article>
-    <article class="panel contacts-panel"><div class="panel-head"><div><span class="eyebrow">MOST ACTIVE</span><h2>Top Contacts</h2></div><a>View All</a></div><div class="top-contact"><span class="rank">01</span><span class="contact-avatar orange">RS</span><div><strong>Rahul Sharma</strong><small>2,845 messages</small></div><b>98%</b></div><div class="top-contact"><span class="rank">02</span><span class="contact-avatar blue">RK</span><div><strong>Ravi Kumar</strong><small>1,920 messages</small></div><b>94%</b></div><div class="top-contact"><span class="rank">03</span><span class="contact-avatar purple">NV</span><div><strong>Neha Verma</strong><small>1,482 messages</small></div><b>91%</b></div></article></aside>
+    <aside class="side-stack"><article class="panel wallet-panel"><div class="panel-head"><div><span class="eyebrow">SESSION SUMMARY</span><h2>WhatsApp Accounts</h2></div><a>View All</a></div><div class="wallet-total"><div class="wallet-icon">◉</div><div><small>Connected Accounts</small><strong>3</strong></div><span>+1 this month</span></div><div class="account-row"><span class="account-dot online"></span><div><strong>Prince Goyal</strong><small>+91 98765 43210</small></div><b>Online</b></div><div class="account-row"><span class="account-dot online"></span><div><strong>Business Account</strong><small>+91 98123 45678</small></div><b>Online</b></div><div class="account-row"><span class="account-dot offline"></span><div><strong>Support Account</strong><small>+91 91234 56789</small></div><b>Offline</b></div><button class="wide-btn">＋ Add WhatsApp Account →</button></article><article class="panel contacts-panel"><div class="panel-head"><div><span class="eyebrow">MOST ACTIVE</span><h2>Top Contacts</h2></div><a>View All</a></div><div class="top-contact"><span class="rank">01</span><span class="contact-avatar orange">RS</span><div><strong>Rahul Sharma</strong><small>2,845 messages</small></div><b>98%</b></div><div class="top-contact"><span class="rank">02</span><span class="contact-avatar blue">RK</span><div><strong>Ravi Kumar</strong><small>1,920 messages</small></div><b>94%</b></div><div class="top-contact"><span class="rank">03</span><span class="contact-avatar purple">NV</span><div><strong>Neha Verma</strong><small>1,482 messages</small></div><b>91%</b></div></article></aside>
   </div>
-
   <div class="bottom-metrics"><div><span class="metric-icon orange">◫</span><section><small>Total Transactions</small><strong>1,24,580</strong><em>↗ 12.45%</em></section></div><div><span class="metric-icon green">✓</span><section><small>Successful Messages</small><strong>1,18,450</strong><em>↗ 15.62%</em></section></div><div><span class="metric-icon red">×</span><section><small>Failed Messages</small><strong>6,130</strong><em class="negative">↘ 2.35%</em></section></div><div><span class="metric-icon purple">◌</span><section><small>Pending Messages</small><strong>2,000</strong><em>↗ 1.25%</em></section></div><div><span class="metric-icon blue">✦</span><section><small>API Calls Today</small><strong>24,580</strong><em>↗ 18.35%</em></section></div></div>
   <footer class="app-footer"><span>© 2026 WhatsApp Pro. All rights reserved.</span><div><a>Privacy Policy</a><a>Terms & Conditions</a><a>Support</a></div></footer>
 </section>
@@ -91,8 +60,6 @@
 <section id="templates-section" class="content-body-area"><div class="placeholder-page"><span>▦</span><h2>Templates</h2><p>Manage reusable WhatsApp message templates.</p></div></section>
 <section id="numbers-section" class="content-body-area"><div class="placeholder-page"><span>▱</span><h2>WhatsApp Numbers</h2><p>Manage connected Baileys sessions and WhatsApp numbers.</p></div></section>
 <section id="settings-section" class="content-body-area"></section>
-</main>
-</div>
-<script src="script.js?v=20260909-reference1"></script>
-</body>
-</html>
+</main></div>
+<script src="script.js?v=20260909-reference2"></script>
+</body></html>
