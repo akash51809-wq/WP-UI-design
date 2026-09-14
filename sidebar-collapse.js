@@ -1,117 +1,150 @@
 (function(){
   function addSendMessageDesign(){
     var section=document.getElementById('send-message-section');
-    if(!section || section.dataset.sendDesigned==='1') return;
-    section.dataset.sendDesigned='1';
+    if(!section || section.dataset.sendDesigned==='2') return;
+    section.dataset.sendDesigned='2';
 
     section.innerHTML=`
-      <div class="send-ref-page">
-        <div class="send-ref-head">
-          <div>
-            <span class="send-ref-kicker">WHATSAPP MESSAGING</span>
-            <h2>Send WhatsApp Message</h2>
-            <p>Send messages to one or multiple WhatsApp numbers quickly.</p>
-          </div>
-          <div class="send-ref-head-actions">
-            <span class="send-ref-status"><i></i> WhatsApp Connected</span>
-            <button type="button" class="send-ref-primary" id="refSendMessage">➤ Send Message</button>
-          </div>
-        </div>
-
-        <div class="send-ref-layout">
-          <div class="send-ref-main">
-            <div class="send-ref-card recipient-card">
-              <div class="send-ref-card-title"><div><b>Choose WhatsApp</b><small>Select the connected WhatsApp account</small></div><span class="ref-step">01</span></div>
-              <div class="send-ref-grid two">
-                <label class="send-ref-field"><span>WHATSAPP ACCOUNT</span><select id="refWhatsapp"><option>Choose WhatsApp</option><option>Prince Goyal · +91 98765 43210</option><option>Business Account · +91 98123 45678</option></select></label>
-                <label class="send-ref-field"><span>MOBILE NUMBER</span><input id="refMobile" type="text" placeholder="Enter mobile number"></label>
-              </div>
-              <div class="send-ref-source-row">
-                <button type="button" class="send-ref-source" id="refExcel"><strong>▣</strong><span><b>Excel</b><small>Upload recipient list</small></span></button>
-                <button type="button" class="send-ref-source" id="refRemoveDuplicates"><strong>⌘</strong><span><b>Remove Duplicates</b><small>Clean duplicate numbers</small></span></button>
-                <input id="refExcelInput" type="file" accept=".xlsx,.xls,.csv" hidden>
-              </div>
-              <div class="ref-recipient-count" id="refRecipientCount">0 recipients selected</div>
+      <div class="send3d-page">
+        <div class="send3d-layout">
+          <aside class="send3d-tools">
+            <div class="send3d-panel-head">
+              <span class="send3d-eyebrow">SEND MESSAGE</span>
+              <h2>Choose WhatsApp</h2>
             </div>
 
-            <div class="send-ref-card message-card">
-              <div class="send-ref-card-title"><div><b>Type Message</b><small>Write your WhatsApp message</small></div><span class="ref-step">02</span></div>
-              <div class="ref-message-toolbar">
-                <button type="button" title="Emoji">☺</button><button type="button" title="Attachment" id="refAttachment">📎</button><button type="button" title="Template">▧</button><button type="button" title="Schedule">◷</button>
-                <span id="refCharCount">0 / 4096</span>
-                <input id="refAttachmentInput" type="file" hidden>
-              </div>
-              <textarea id="refMessageBox" class="ref-message-box" maxlength="4096" placeholder="Type your message here..."></textarea>
-              <div class="ref-message-footer"><span>📎 Attachment supported</span><span>Maximum 4096 characters</span></div>
+            <label class="send3d-label">Choose WhatsApp</label>
+            <select id="whatsappAccount" class="send3d-select">
+              <option>Choose WhatsApp</option>
+              <option>Prince Goyal · +91 98765 43210</option>
+              <option>Business Account · +91 98123 45678</option>
+            </select>
+
+            <label class="send3d-label">Mobile Number</label>
+            <input id="toNumber" class="send3d-input" type="text" placeholder="Enter mobile number">
+
+            <div class="send3d-mini-actions">
+              <button type="button" id="uploadExcelBtn" class="send3d-icon-action" data-tip="Upload Excel" aria-label="Upload Excel">
+                <span class="mini-icon">▤</span><small>Excel</small>
+              </button>
+              <button type="button" id="removeDuplicatesBtn" class="send3d-icon-action" data-tip="Remove duplicates" aria-label="Remove duplicates">
+                <span class="mini-icon">⇄</span><small>Clean</small>
+              </button>
+              <input id="excelInput" type="file" accept=".xlsx,.xls,.csv" hidden>
             </div>
 
-            <div class="send-ref-card live-preview-card">
-              <div class="send-ref-card-title"><div><b>Live Preview</b><small>See exactly how your message will look</small></div><span class="ref-live"><i></i> Live</span></div>
-              <div class="ref-preview-area">
-                <div class="ref-phone">
-                  <div class="ref-phone-head"><div class="ref-phone-avatar">PG</div><div><b>Prince Goyal</b><small>online</small></div><span>⋮</span></div>
-                  <div class="ref-phone-wall"><div class="ref-preview-bubble" id="refPreviewMessage">Your message preview will appear here...</div></div>
-                  <div class="ref-phone-bottom"><span>☺</span><span>📎</span><div></div><b>➤</b></div>
+            <div class="send3d-attachment-row">
+              <span class="send3d-label">Attachment</span>
+              <button type="button" id="attachBtn" class="send3d-round-action" data-tip="Attach file" aria-label="Attach file">⌕</button>
+              <input id="attachmentInput" type="file" hidden>
+            </div>
+
+            <div class="send3d-recipient-status" id="recipientStatus">No recipients selected</div>
+
+            <div class="send3d-side-note">
+              <span>01</span>
+              <div><b>Recipients</b><small>Add one number or import a list from Excel.</small></div>
+            </div>
+          </aside>
+
+          <main class="send3d-compose">
+            <div class="send3d-compose-top">
+              <div>
+                <span class="send3d-eyebrow">WHATSAPP MESSAGE</span>
+                <h1>Type Message</h1>
+                <p>Compose your message and preview it before sending.</p>
+              </div>
+              <span class="send3d-connected"><i></i> Connected</span>
+            </div>
+
+            <div class="send3d-editor">
+              <textarea id="messageBox" maxlength="4096" placeholder="Type a message..."></textarea>
+              <div class="send3d-editor-bottom">
+                <span class="send3d-hint">WhatsApp message</span>
+                <div class="send3d-editor-actions">
+                  <button type="button" id="emojiBtn" class="send3d-circle" data-tip="Emoji" aria-label="Emoji">☺</button>
+                  <button type="button" id="templateBtn" class="send3d-circle" data-tip="Message template" aria-label="Message template">▧</button>
+                  <button type="button" id="attachEditorBtn" class="send3d-circle" data-tip="Attachment" aria-label="Attachment">⌕</button>
+                  <button type="button" id="scheduleBtn" class="send3d-circle" data-tip="Schedule message" aria-label="Schedule message">◷</button>
+                  <button type="button" id="micBtn" class="send3d-circle" data-tip="Voice message" aria-label="Voice message">♩</button>
+                  <button type="button" id="sendMessageBtn" class="send3d-send" data-tip="Send message" aria-label="Send message">➤</button>
                 </div>
               </div>
+              <div class="send3d-editor-meta"><span id="attachmentStatus">No attachment</span><span id="charCount">0 / 4096</span></div>
+              <input id="attachEditorInput" type="file" hidden>
             </div>
-          </div>
 
-          <aside class="send-ref-help">
-            <div class="send-ref-help-card">
-              <div class="help-head"><div class="help-icon">?</div><div><span>QUICK GUIDE</span><h3>How to Use</h3></div></div>
-              <div class="help-step"><div>1</div><section><b>Choose WhatsApp</b><p>Select your connected WhatsApp account from the dropdown.</p></section></div>
-              <div class="help-step"><div>2</div><section><b>Add Mobile Number</b><p>Enter a number manually or upload multiple numbers through Excel.</p></section></div>
-              <div class="help-step"><div>3</div><section><b>Remove Duplicates</b><p>Use the button to automatically clean repeated numbers from your list.</p></section></div>
-              <div class="help-step"><div>4</div><section><b>Type Message</b><p>Write your message, add an attachment or select a template.</p></section></div>
-              <div class="help-step"><div>5</div><section><b>Preview & Send</b><p>Check the live preview and press Send Message when ready.</p></section></div>
-              <div class="help-tip"><b>💡 Pro Tip</b><span>For bulk messaging, Excel upload is faster and keeps your recipient list organized.</span></div>
+            <div class="send3d-preview-head">
+              <div><span class="send3d-eyebrow">LIVE PREVIEW</span><h3>Message Preview</h3></div>
+              <span class="send3d-live"><i></i> Live</span>
             </div>
+            <div class="send3d-preview">
+              <div class="send3d-phone">
+                <div class="send3d-phone-top">
+                  <div class="send3d-avatar">PG</div>
+                  <div><b>Prince Goyal</b><small>online</small></div>
+                  <span>⋮</span>
+                </div>
+                <div class="send3d-chat-wall">
+                  <div class="send3d-date">TODAY</div>
+                  <div class="send3d-bubble" id="previewMessage">Your message preview will appear here...</div>
+                </div>
+                <div class="send3d-phone-input"><span>☺</span><div></div><b>➤</b></div>
+              </div>
+            </div>
+          </main>
+
+          <aside class="send3d-howto">
+            <div class="send3d-howto-head">
+              <div class="send3d-help-icon">?</div>
+              <div><span class="send3d-eyebrow">QUICK GUIDE</span><h2>How to Use</h2></div>
+            </div>
+            <div class="send3d-step"><b>1</b><div><strong>Choose WhatsApp</strong><p>Select the connected WhatsApp account.</p></div></div>
+            <div class="send3d-step"><b>2</b><div><strong>Add Number</strong><p>Enter a mobile number manually.</p></div></div>
+            <div class="send3d-step"><b>3</b><div><strong>Upload Excel</strong><p>Import multiple recipients in one click.</p></div></div>
+            <div class="send3d-step"><b>4</b><div><strong>Type Message</strong><p>Write your message in the editor.</p></div></div>
+            <div class="send3d-step"><b>5</b><div><strong>Preview & Send</strong><p>Check the preview and send when ready.</p></div></div>
+            <div class="send3d-tip"><span>✦</span><div><b>Pro Tip</b><p>Use Excel for bulk recipients and Remove Duplicates before sending.</p></div></div>
           </aside>
         </div>
       </div>`;
 
-    if(!document.getElementById('send-ref-style')){
+    if(!document.getElementById('send3d-style')){
       var style=document.createElement('style');
-      style.id='send-ref-style';
+      style.id='send3d-style';
       style.textContent=`
-      .send-ref-page{width:100%;max-width:none;padding:0 0 28px;color:#101828}
-      .send-ref-head{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:16px;padding:2px 2px}
-      .send-ref-kicker{font-size:10px;font-weight:800;letter-spacing:1.5px;color:#ff6508}
-      .send-ref-head h2{margin:4px 0 3px;font-size:22px;line-height:1.2;color:#101828}
-      .send-ref-head p{margin:0;color:#667085;font-size:12px}
-      .send-ref-head-actions{display:flex;align-items:center;gap:12px}
-      .send-ref-status{display:flex;align-items:center;gap:7px;padding:9px 12px;background:#ecfdf3;border:1px solid #abefc6;border-radius:10px;color:#027a48;font-size:11px;font-weight:700;box-shadow:0 3px 0 #b7dfc8}
-      .send-ref-status i,.ref-live i{width:7px;height:7px;border-radius:50%;background:#12b76a;display:inline-block}
-      .send-ref-primary{padding:11px 17px!important;border:1px solid #d94f00!important;border-radius:10px!important;background:#ff6508!important;color:#fff!important;font-weight:800!important;box-shadow:0 4px 0 #d94f00,0 8px 15px rgba(255,101,8,.2)!important;cursor:pointer}
-      .send-ref-primary:hover{transform:translateY(-2px)!important;background:#f45d05!important}
-      .send-ref-layout{display:grid;grid-template-columns:minmax(0,1fr) 315px;gap:16px;align-items:start}
-      .send-ref-main{min-width:0;display:grid;gap:14px}
-      .send-ref-card,.send-ref-help-card{background:#fff;border:1px solid #e4e7ec;border-radius:14px;box-shadow:0 6px 18px rgba(16,24,40,.08);overflow:hidden}
-      .send-ref-card-title{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid #eaecf0;background:#fff}
-      .send-ref-card-title b{display:block;font-size:13px;color:#101828}.send-ref-card-title small{display:block;margin-top:3px;font-size:10px;color:#667085}.ref-step{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#fff1e8;color:#ff6508;font-size:10px;font-weight:900;border:1px solid #fed7aa}
-      .send-ref-grid.two{display:grid;grid-template-columns:1.15fr 1fr;gap:12px;padding:14px 16px 10px}
-      .send-ref-field{display:flex;flex-direction:column;gap:6px}.send-ref-field>span{font-size:9px;font-weight:800;letter-spacing:.7px;color:#475467}.send-ref-field input,.send-ref-field select{width:100%;height:42px;border:1px solid #d0d5dd;border-radius:9px;background:#fff;color:#344054;padding:0 11px;font-size:12px;outline:none;box-shadow:inset 0 1px 2px rgba(16,24,40,.04)}.send-ref-field input:focus,.send-ref-field select:focus{border-color:#ff6508;box-shadow:0 0 0 3px rgba(255,101,8,.1)}
-      .send-ref-source-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px 10px}.send-ref-source{display:flex;align-items:center;gap:10px;text-align:left;min-height:58px;padding:9px 11px!important;background:#fff!important;border:1px solid #d0d5dd!important;border-radius:10px!important;box-shadow:0 3px 0 #c4c8ce,0 6px 10px rgba(16,24,40,.07)!important;cursor:pointer}.send-ref-source:hover{border-color:#ff6508!important;background:#fff7ed!important;transform:translateY(-2px)}.send-ref-source strong{width:35px;height:35px;display:grid;place-items:center;border-radius:9px;background:#fff1e8;color:#ff6508;font-size:16px}.send-ref-source span{min-width:0}.send-ref-source b{display:block;color:#344054;font-size:11px}.send-ref-source small{display:block;color:#98a2b3;font-size:9px;margin-top:2px}.ref-recipient-count{margin:0 16px 13px;padding:7px 9px;background:#f9fafb;border:1px solid #eaecf0;border-radius:8px;color:#667085;font-size:10px}
-      .message-card{position:relative}.ref-message-toolbar{display:flex;align-items:center;gap:6px;padding:10px 16px 0}.ref-message-toolbar button{width:31px;height:29px;padding:0!important;border-radius:8px!important;font-size:14px}.ref-message-toolbar span{margin-left:auto;font-size:9px;color:#98a2b3}.ref-message-box{display:block;width:calc(100% - 32px);margin:8px 16px 0;min-height:118px;resize:vertical;border:1px solid #d0d5dd;border-radius:11px;background:#fff;color:#344054;padding:12px;font-size:12px;line-height:1.55;outline:none}.ref-message-box:focus{border-color:#ff6508;box-shadow:0 0 0 3px rgba(255,101,8,.1)}.ref-message-footer{display:flex;justify-content:space-between;padding:7px 16px 13px;color:#98a2b3;font-size:9px}
-      .ref-live{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:7px;background:#ecfdf3;color:#027a48;font-size:9px;font-weight:800}.ref-preview-area{padding:14px;background:#f8fafc;display:flex;justify-content:center}.ref-phone{width:min(100%,400px);border:5px solid #344054;border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 8px 18px rgba(16,24,40,.12)}.ref-phone-head{height:48px;display:flex;align-items:center;gap:9px;padding:7px 11px;background:#fff;border-bottom:1px solid #eaecf0}.ref-phone-avatar{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#ff6508;color:#fff;font-size:10px;font-weight:900}.ref-phone-head b{font-size:11px;color:#344054}.ref-phone-head small{display:block;color:#12b76a;font-size:8px;margin-top:1px}.ref-phone-head>span{margin-left:auto;color:#667085}.ref-phone-wall{min-height:150px;padding:15px 12px;background:#f8fafc;display:flex;align-items:flex-end}.ref-preview-bubble{max-width:82%;padding:9px 11px;border-radius:10px 10px 3px 10px;background:#fff1e8;border:1px solid #fed7aa;color:#7a2e0b;font-size:10px;line-height:1.45;box-shadow:0 3px 8px rgba(16,24,40,.06)}.ref-phone-bottom{display:flex;align-items:center;gap:7px;padding:7px 9px;border-top:1px solid #eaecf0;background:#fff;color:#667085;font-size:12px}.ref-phone-bottom div{height:28px;flex:1;border:1px solid #d0d5dd;border-radius:14px;background:#f9fafb}.ref-phone-bottom b{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#ff6508;color:#fff;font-size:12px}
-      .send-ref-help{position:sticky;top:10px}.send-ref-help-card{padding:0}.help-head{display:flex;align-items:center;gap:10px;padding:15px 15px 13px;background:#fff7ed;border-bottom:1px solid #fed7aa}.help-icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#ff6508;color:#fff;font-weight:900;font-size:16px;box-shadow:0 3px 0 #d94f00}.help-head span{font-size:8px;letter-spacing:1px;font-weight:800;color:#ff6508}.help-head h3{margin:2px 0 0;font-size:15px;color:#101828}.help-step{display:flex;gap:10px;padding:11px 13px;border-bottom:1px solid #f0f2f5}.help-step>div{flex:0 0 25px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#fff1e8;border:1px solid #fed7aa;color:#ff6508;font-weight:900;font-size:10px}.help-step section{min-width:0}.help-step b{display:block;color:#344054;font-size:10px}.help-step p{margin:3px 0 0;color:#667085;font-size:9px;line-height:1.45}.help-tip{margin:12px;padding:10px;border-radius:9px;background:#fff7ed;border:1px solid #fed7aa;color:#7a2e0b}.help-tip b{display:block;font-size:9px;color:#ff6508;margin-bottom:3px}.help-tip span{font-size:9px;line-height:1.45;display:block}
-      @media(max-width:900px){.send-ref-layout{grid-template-columns:1fr}.send-ref-help{position:static}.send-ref-grid.two{grid-template-columns:1fr}}
-      @media(max-width:620px){.send-ref-head{align-items:flex-start;flex-direction:column}.send-ref-head-actions{width:100%;justify-content:space-between}.send-ref-source-row{grid-template-columns:1fr}.send-ref-head h2{font-size:19px}}
+      .send3d-page{width:100%;min-height:calc(100vh - 92px);padding:0 0 22px;color:#eef2f5}
+      .send3d-layout{display:grid;grid-template-columns:252px minmax(430px,1fr) 292px;gap:14px;align-items:stretch}
+      .send3d-tools,.send3d-compose,.send3d-howto{min-width:0;border-radius:16px;border:1px solid #454b53;background:linear-gradient(145deg,#343940,#24282e);box-shadow:8px 10px 20px rgba(16,24,40,.18),inset 1px 1px 0 rgba(255,255,255,.08),inset -2px -2px 5px rgba(0,0,0,.2);overflow:hidden}
+      .send3d-tools{padding:15px 14px}.send3d-panel-head{margin-bottom:17px}.send3d-eyebrow{display:block;color:#ff8a43;font-size:8px;font-weight:900;letter-spacing:1.5px}.send3d-panel-head h2{font-size:14px;margin:4px 0 0;color:#fff}.send3d-label{display:block;margin:10px 2px 6px;color:#d2d7dc;font-size:9px;font-weight:800}.send3d-select,.send3d-input{width:100%;height:39px;border-radius:11px;border:1px solid #535a63;background:linear-gradient(145deg,#292e35,#3a3f47);color:#f5f7f9;padding:0 10px;font-size:10px;outline:0;box-shadow:inset 3px 3px 7px rgba(0,0,0,.35),inset -1px -1px 2px rgba(255,255,255,.04),0 2px 0 #171a1e}.send3d-input::placeholder{color:#858d96}.send3d-select:focus,.send3d-input:focus{border-color:#ff8740;box-shadow:0 0 0 2px rgba(255,101,8,.18),inset 3px 3px 7px rgba(0,0,0,.35)}
+      .send3d-mini-actions{display:flex;gap:10px;margin:14px 0 8px}.send3d-icon-action{position:relative;width:52px;height:52px!important;min-width:52px!important;padding:0!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid #565d66!important;border-radius:12px!important;background:linear-gradient(145deg,#41464e,#292d33)!important;color:#f3f5f7!important;box-shadow:5px 6px 10px rgba(0,0,0,.35),inset 1px 1px 1px rgba(255,255,255,.08),inset -2px -2px 3px rgba(0,0,0,.35)!important;cursor:pointer}.send3d-icon-action:active,.send3d-circle:active,.send3d-send:active,.send3d-round-action:active{transform:translateY(2px);box-shadow:2px 3px 5px rgba(0,0,0,.35)!important}.send3d-icon-action .mini-icon{width:25px;height:25px;display:grid;place-items:center;border-radius:7px;background:#ff6508;color:#fff;font-size:13px;font-weight:900;box-shadow:0 2px 0 #c84d00}.send3d-icon-action small{font-size:7px;color:#d9dde1}.send3d-icon-action:hover{border-color:#ff8740!important}.send3d-icon-action[data-tip]:hover:after,.send3d-circle[data-tip]:hover:after,.send3d-send[data-tip]:hover:after,.send3d-round-action[data-tip]:hover:after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;z-index:50;background:#15181c;color:#fff;border:1px solid #535a63;border-radius:6px;padding:5px 7px;font-size:8px;font-weight:700;box-shadow:0 5px 14px rgba(0,0,0,.3);pointer-events:none}.send3d-round-action[data-tip]:hover:after{bottom:auto;top:calc(100% + 7px)}
+      .send3d-attachment-row{position:relative;display:flex;align-items:center;justify-content:space-between;margin-top:12px}.send3d-attachment-row .send3d-label{margin:0}.send3d-round-action{position:relative;width:42px;height:42px!important;min-width:42px!important;padding:0!important;border-radius:50%!important;border:1px solid #626973!important;background:linear-gradient(145deg,#454a52,#292e34)!important;color:#fff!important;font-size:17px;box-shadow:4px 5px 9px rgba(0,0,0,.38),inset 1px 1px 1px rgba(255,255,255,.08)!important;cursor:pointer}.send3d-round-action:hover{color:#ff8a43!important;border-color:#ff8740!important}.send3d-recipient-status{margin-top:13px;padding:8px 9px;border-radius:8px;background:#292e34;border:1px solid #484e57;color:#9da5ae;font-size:8px;box-shadow:inset 2px 2px 5px rgba(0,0,0,.25)}.send3d-side-note{display:flex;gap:9px;margin-top:16px;padding-top:14px;border-top:1px solid #474d55}.send3d-side-note>span{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;background:#ff6508;color:#fff;font-size:8px;font-weight:900;box-shadow:0 2px 0 #c84d00}.send3d-side-note b{display:block;font-size:9px;color:#e9ecef}.send3d-side-note small{display:block;margin-top:3px;color:#929aa4;font-size:7px;line-height:1.4}
+      .send3d-compose{padding:17px;display:flex;flex-direction:column;background:linear-gradient(145deg,#373c43,#25292f)}.send3d-compose-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.send3d-compose-top h1{font-size:18px;margin:3px 0;color:#fff}.send3d-compose-top p{margin:0;color:#9fa7b0;font-size:9px}.send3d-connected,.send3d-live{display:flex;align-items:center;gap:5px;border-radius:9px;padding:6px 8px;background:#24282d;border:1px solid #4c535c;color:#b9c0c7;font-size:8px;font-weight:800;box-shadow:inset 2px 2px 4px rgba(0,0,0,.25)}.send3d-connected i,.send3d-live i{width:6px;height:6px;border-radius:50%;background:#20d477;box-shadow:0 0 7px rgba(32,212,119,.6)}
+      .send3d-editor{position:relative;margin-top:14px;min-height:245px;border-radius:16px;border:1px solid #515861;background:linear-gradient(145deg,#2c3138,#20242a);box-shadow:inset 4px 4px 10px rgba(0,0,0,.35),inset -2px -2px 4px rgba(255,255,255,.035),0 5px 0 #171a1e;overflow:hidden}.send3d-editor textarea{display:block;width:100%;height:185px;resize:none;border:0;outline:0;background:transparent;color:#f4f6f8;padding:17px;font-size:12px;line-height:1.65;font-family:inherit}.send3d-editor textarea::placeholder{color:#7f8790}.send3d-editor-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 11px 7px;border-top:1px solid #454b53;background:linear-gradient(180deg,#30353c,#272b31)}.send3d-hint{font-size:8px;color:#858e97}.send3d-editor-actions{display:flex;align-items:center;gap:6px;position:relative}.send3d-circle{position:relative;width:31px;height:31px!important;min-width:31px!important;padding:0!important;display:grid;place-items:center;border-radius:50%!important;border:1px solid #5a616a!important;background:linear-gradient(145deg,#464b53,#292e34)!important;color:#e6e9ec!important;font-size:12px;box-shadow:3px 4px 7px rgba(0,0,0,.35),inset 1px 1px 1px rgba(255,255,255,.07)!important;cursor:pointer}.send3d-circle:hover{color:#ff8a43!important;border-color:#ff8740!important;transform:translateY(-1px)}.send3d-send{position:relative;width:38px;height:38px!important;min-width:38px!important;padding:0!important;display:grid;place-items:center;border-radius:50%!important;border:1px solid #d95400!important;background:linear-gradient(145deg,#ff8a3d,#e95400)!important;color:#fff!important;font-size:14px;font-weight:900;box-shadow:4px 5px 9px rgba(0,0,0,.38),inset 1px 1px 1px rgba(255,255,255,.22),0 2px 0 #a83f00!important;cursor:pointer}.send3d-send:hover{transform:translateY(-2px);filter:brightness(1.05)}.send3d-editor-meta{display:flex;justify-content:space-between;padding:5px 12px;color:#707984;font-size:7px;background:#22262c}
+      .send3d-preview-head{display:flex;align-items:center;justify-content:space-between;margin:15px 1px 8px}.send3d-preview-head h3{font-size:12px;margin:3px 0;color:#fff}.send3d-preview{flex:1;min-height:180px;display:flex;align-items:center;justify-content:center;border-radius:13px;background:linear-gradient(145deg,#2c3138,#20242a);border:1px solid #4b525a;box-shadow:inset 3px 3px 8px rgba(0,0,0,.3);padding:12px}.send3d-phone{width:min(100%,310px);border-radius:14px;border:4px solid #171a1e;background:#f7f7f7;overflow:hidden;box-shadow:7px 9px 15px rgba(0,0,0,.35)}.send3d-phone-top{height:43px;display:flex;align-items:center;gap:7px;padding:6px 9px;background:#fff;border-bottom:1px solid #ddd}.send3d-avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#ff6508;color:#fff;font-size:8px;font-weight:900}.send3d-phone-top b{font-size:9px;color:#34383d}.send3d-phone-top small{display:block;font-size:7px;color:#20a965;margin-top:1px}.send3d-phone-top>span{margin-left:auto;color:#777}.send3d-chat-wall{min-height:105px;padding:12px;background:#eee;display:flex;flex-direction:column;justify-content:flex-end;gap:8px}.send3d-date{align-self:center;padding:3px 6px;border-radius:5px;background:#ddd;color:#777;font-size:6px;font-weight:800}.send3d-bubble{align-self:flex-end;max-width:78%;padding:8px 9px;border-radius:9px 9px 2px 9px;background:#fff1e8;border:1px solid #ffd1b3;color:#6c2b0c;font-size:8px;line-height:1.4;box-shadow:0 3px 6px rgba(0,0,0,.1)}.send3d-phone-input{display:flex;align-items:center;gap:5px;padding:6px 7px;background:#fff;border-top:1px solid #ddd;color:#777;font-size:9px}.send3d-phone-input div{height:23px;flex:1;border:1px solid #ddd;border-radius:12px;background:#f8f8f8}.send3d-phone-input b{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#ff6508;color:#fff;font-size:9px}
+      .send3d-howto{position:sticky;top:8px;height:max-content;background:linear-gradient(145deg,#343940,#25292f)}.send3d-howto-head{display:flex;align-items:center;gap:9px;padding:15px 13px;background:linear-gradient(145deg,#3d4249,#292e34);border-bottom:1px solid #50565f;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}.send3d-help-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(145deg,#ff8a3d,#df5200);color:#fff;font-weight:900;font-size:16px;box-shadow:4px 5px 8px rgba(0,0,0,.35),inset 1px 1px 1px rgba(255,255,255,.22),0 2px 0 #a43d00}.send3d-howto-head h2{margin:3px 0 0;font-size:15px;color:#fff}.send3d-step{display:flex;gap:9px;padding:12px 12px;border-bottom:1px solid #424850}.send3d-step>b{flex:0 0 25px;width:25px;height:25px;display:grid;place-items:center;border-radius:8px;background:linear-gradient(145deg,#454a52,#292e34);border:1px solid #5a6169;color:#ff8a43;font-size:10px;box-shadow:3px 4px 7px rgba(0,0,0,.3),inset 1px 1px rgba(255,255,255,.06)}.send3d-step strong{display:block;color:#e9ecef;font-size:9px}.send3d-step p{margin:3px 0 0;color:#929aa3;font-size:7.5px;line-height:1.45}.send3d-tip{display:flex;gap:8px;margin:12px;padding:10px;border-radius:10px;background:linear-gradient(145deg,#3b302a,#2c2928);border:1px solid #654634;box-shadow:inset 2px 2px 5px rgba(0,0,0,.25),3px 4px 7px rgba(0,0,0,.22)}.send3d-tip>span{color:#ff8a43;font-size:15px}.send3d-tip b{display:block;color:#ff9b5c;font-size:8px}.send3d-tip p{margin:3px 0 0;color:#b1a59f;font-size:7.5px;line-height:1.45}
+      @media(max-width:1100px){.send3d-layout{grid-template-columns:220px minmax(380px,1fr) 260px}.send3d-tools{padding:13px 11px}.send3d-compose{padding:14px}.send3d-howto-head{padding:13px 10px}}
+      @media(max-width:900px){.send3d-layout{grid-template-columns:220px minmax(0,1fr)}.send3d-howto{grid-column:1/-1;position:static}.send3d-howto{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.send3d-howto-head{grid-column:1/-1}.send3d-tip{grid-column:1/-1}}
+      @media(max-width:650px){.send3d-layout{grid-template-columns:1fr}.send3d-howto{display:block}.send3d-editor{min-height:220px}.send3d-editor textarea{height:165px}.send3d-compose-top{flex-direction:column}.send3d-editor-bottom{align-items:flex-end}.send3d-hint{display:none}}
       `;
       document.head.appendChild(style);
     }
 
-    var msg=document.getElementById('refMessageBox'), preview=document.getElementById('refPreviewMessage'), count=document.getElementById('refCharCount');
-    if(msg){msg.addEventListener('input',function(){if(preview) preview.textContent=msg.value.trim()||'Your message preview will appear here...';if(count) count.textContent=msg.value.length+' / 4096';});}
-    var excel=document.getElementById('refExcel'), excelInput=document.getElementById('refExcelInput');
-    if(excel && excelInput){excel.addEventListener('click',function(){excelInput.click()});excelInput.addEventListener('change',function(){var n=excelInput.files&&excelInput.files[0]?excelInput.files[0].name:'';if(n) document.getElementById('refRecipientCount').textContent='Excel selected: '+n;});}
-    var attachment=document.getElementById('refAttachment'), attachmentInput=document.getElementById('refAttachmentInput');
-    if(attachment && attachmentInput){attachment.addEventListener('click',function(){attachmentInput.click()});attachmentInput.addEventListener('change',function(){var n=attachmentInput.files&&attachmentInput.files[0]?attachmentInput.files[0].name:'';if(n) attachment.textContent='✓';});}
-    var duplicate=document.getElementById('refRemoveDuplicates');
-    if(duplicate) duplicate.addEventListener('click',function(){var mobile=document.getElementById('refMobile');if(mobile&&mobile.value){var nums=mobile.value.split(/[,\s]+/).filter(Boolean);var clean=[...new Set(nums)];mobile.value=clean.join(', ');document.getElementById('refRecipientCount').textContent=clean.length+' unique recipient(s)';}else{document.getElementById('refRecipientCount').textContent='Enter recipient numbers first';}});
-    var send=document.getElementById('refSendMessage');
-    if(send) send.addEventListener('click',function(){var box=document.getElementById('refMessageBox');if(!box||!box.value.trim()){alert('Please type a message first.');return;}alert('Message is ready to send.');});
+    var message=document.getElementById('messageBox'),preview=document.getElementById('previewMessage'),count=document.getElementById('charCount');
+    if(message){message.addEventListener('input',function(){if(preview)preview.textContent=message.value.trim()||'Your message preview will appear here...';if(count)count.textContent=message.value.length+' / 4096';});}
+
+    var excel=document.getElementById('uploadExcelBtn'),excelInput=document.getElementById('excelInput');
+    if(excel&&excelInput){excel.addEventListener('click',function(){excelInput.click()});excelInput.addEventListener('change',function(){var f=excelInput.files&&excelInput.files[0];if(f){var s=document.getElementById('recipientStatus');if(s)s.textContent='Excel selected: '+f.name;}});}
+
+    var attach=document.getElementById('attachBtn'),attachInput=document.getElementById('attachmentInput'),editorAttach=document.getElementById('attachEditorBtn'),editorAttachInput=document.getElementById('attachEditorInput');
+    function wireAttachment(button,input){if(button&&input){button.addEventListener('click',function(){input.click()});input.addEventListener('change',function(){var f=input.files&&input.files[0];if(f){var st=document.getElementById('attachmentStatus');if(st)st.textContent='Attached: '+f.name;button.textContent='✓';}});}}
+    wireAttachment(attach,attachInput);wireAttachment(editorAttach,editorAttachInput);
+
+    var duplicate=document.getElementById('removeDuplicatesBtn');
+    if(duplicate)duplicate.addEventListener('click',function(){var mobile=document.getElementById('toNumber');var status=document.getElementById('recipientStatus');if(!mobile||!mobile.value.trim()){if(status)status.textContent='Enter recipient numbers first';return;}var nums=mobile.value.split(/[,\s]+/).filter(Boolean);var clean=[...new Set(nums)];mobile.value=clean.join(', ');if(status)status.textContent=clean.length+' unique recipient(s)';});
+
+    document.getElementById('emojiBtn')?.addEventListener('click',function(){var box=document.getElementById('messageBox');if(box){box.value+='😊';box.dispatchEvent(new Event('input'));box.focus();}});
+    document.getElementById('sendMessageBtn')?.addEventListener('click',function(){var box=document.getElementById('messageBox');if(!box||!box.value.trim()){alert('Please type a message first.');return;}this.textContent='✓';setTimeout(()=>this.textContent='➤',1000);});
   }
 
   function initApp(){
@@ -123,12 +156,12 @@
     document.body.style.display='flex';
     if(dashboard){dashboard.style.display='flex';dashboard.style.flexDirection='column';dashboard.style.visibility='visible';dashboard.style.opacity='1';}
     addSendMessageDesign();
-    if(!sidebar) return;
-    if(sidebar.querySelector('.sidebar-collapse-btn')) return;
+    if(!sidebar)return;
+    if(sidebar.querySelector('.sidebar-collapse-btn'))return;
     var btn=document.createElement('button');btn.className='sidebar-collapse-btn';btn.type='button';btn.setAttribute('aria-label','Collapse sidebar');btn.setAttribute('title','Collapse / Expand menu');btn.textContent='‹';sidebar.style.position='fixed';sidebar.appendChild(btn);
     var saved=false;try{saved=localStorage.getItem('sidebarCollapsed')==='1';}catch(e){}
     if(saved){sidebar.classList.add('collapsed');document.body.classList.add('sidebar-collapsed');btn.textContent='›';btn.setAttribute('aria-label','Expand sidebar');}
     btn.addEventListener('click',function(){var collapsed=sidebar.classList.toggle('collapsed');document.body.classList.toggle('sidebar-collapsed',collapsed);try{localStorage.setItem('sidebarCollapsed',collapsed?'1':'0');}catch(e){}btn.textContent=collapsed?'›':'‹';btn.setAttribute('aria-label',collapsed?'Expand sidebar':'Collapse sidebar');});
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initApp); else initApp();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initApp);else initApp();
 })();
