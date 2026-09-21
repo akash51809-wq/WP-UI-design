@@ -77,9 +77,8 @@
 }
 
 /* Five-card dashboard metrics */
-.grid4{grid-template-columns:repeat(5,minmax(0,1fr));}
-.grid4 .stat{min-width:0;}
+.grid4{grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;}
+.grid4 .stat{min-width:0;padding:15px 13px;}
 .grid4 .stat small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@media(max-width:1180px){.grid4{grid-template-columns:repeat(3,minmax(0,1fr));}}
 @media(max-width:760px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:460px){.grid4{grid-template-columns:1fr;}}
