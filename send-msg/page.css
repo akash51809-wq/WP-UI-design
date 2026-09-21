@@ -139,3 +139,53 @@
   .guide-step h3{font-size:10px}
   .guide-step p{font-size:9px}
 }
+
+
+/* Final readability scale */
+.send-content{font-size:12px}
+.send-toolbar p{font-size:13px;line-height:1.55}
+.send-title-row h1{font-size:30px;font-weight:800}
+.live-pill,.secure-chip{font-size:10px;padding:6px 10px}
+.toolbar-stats span{font-size:10px;padding:9px 12px}
+.toolbar-stats b{font-size:13px}
+
+.composer-head h2,.guide-head h2{font-size:17px;font-weight:800}
+.composer-head p,.guide-head p{font-size:11px;line-height:1.5}
+.composer-head{padding:15px 17px}
+.guide-head{padding:15px 17px}
+
+.field label{font-size:10px;font-weight:800;letter-spacing:.55px}
+.field-hint{font-size:9px}
+.input,.select,.textarea{font-size:13px;line-height:1.55}
+.select{height:42px}
+.input{height:42px}
+.recipient-area{min-height:82px}
+.message-area{min-height:135px}
+
+.tool-btn{font-size:11px}
+.tool-btn span{font-size:10px}
+.emoji-popover button{font-size:18px}
+.countdown-box span{font-size:8px}
+.countdown-box strong{font-size:19px}
+.countdown-box small{font-size:9px}
+
+.compact-btn{font-size:10px;padding:9px 11px}
+.send-btn{font-size:11px;padding:11px 14px}
+.composer-footer{font-size:9px}
+
+.guide-step{grid-template-columns:29px 1fr;gap:10px;padding:13px 0}
+.guide-num{width:29px;height:29px;font-size:9px}
+.guide-step h3{font-size:12px;font-weight:800}
+.guide-step p{font-size:10px;line-height:1.65}
+.guide-tip{padding:12px}
+.guide-tip strong{font-size:10px}
+.guide-tip small{font-size:9px;line-height:1.6}
+
+@media(max-width:780px){
+  .send-title-row h1{font-size:26px}
+  .send-toolbar p{font-size:12px}
+  .field label{font-size:10px}
+  .input,.select,.textarea{font-size:13px}
+  .guide-step h3{font-size:12px}
+  .guide-step p{font-size:10px}
+}
