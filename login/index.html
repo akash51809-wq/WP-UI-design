@@ -7,7 +7,7 @@
 <title>Easy Recharge Solution — Login</title>
 <link rel="stylesheet" href="page.css">
 <script>
-if(localStorage.getItem("wpui_logged_in")==="1"){
+if(localStorage.getItem("wpui_logged_in")==="1" || sessionStorage.getItem("wpui_logged_in")==="1"){
   window.location.replace("../");
 }
 </script>
@@ -167,12 +167,14 @@ form.addEventListener("submit",(e)=>{
     localStorage.setItem("wpui_mobile",number);
     window.location.replace("../");
   };
-  if(remember.checked) go();
-  else {
-    sessionStorage.setItem("wpui_session_login","1");
+  if(remember.checked){
     localStorage.setItem("wpui_logged_in","1");
-    go();
+    localStorage.setItem("wpui_mobile",number);
+  }else{
+    sessionStorage.setItem("wpui_logged_in","1");
+    sessionStorage.setItem("wpui_mobile",number);
   }
+  window.location.replace("../");
 });
 </script>
 </body>
