@@ -1,5 +1,152 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Easy Recharge Solution — API Docs</title><link rel="stylesheet" href="../app-shell.css"><link rel="stylesheet" href="./page.css"></head><body><div class="app"><aside class="sidebar"><a class="brand" href="../"><span class="brand-mark">⚡</span><div><strong>Easy Recharge</strong><small>WhatsApp Automation</small></div></a><nav class="nav"><a href="../" class=""><span>⌂</span><b>Dashboard</b></a><a href="../device/" class=""><span>▣</span><b>Device</b></a><a href="../send-msg/" class=""><span>↗</span><b>Send message</b></a><a href="../inbox/" class=""><span>▤</span><b>Inbox</b></a><a href="../reports/" class=""><span>▥</span><b>Reports</b></a><a href="../msg-report/" class=""><span>▤</span><b>Msg report</b></a><a href="../campaigns/" class=""><span>◇</span><b>Campaigns</b></a><a href="../templates/" class=""><span>▧</span><b>Templates</b></a><a href="../contacts/" class=""><span>♙</span><b>Contacts</b></a><a href="../settings/" class=""><span>⚙</span><b>Settings</b></a><a href="../plans/" class=""><span>◆</span><b>Plans</b></a><a href="../api-docs/" class="active"><span>⌘</span><b>API Docs</b></a></nav><div class="sidebar-status"><span class="dot"></span><div><strong>WhatsApp Online</strong><small>All systems operational</small></div></div></aside><main class="main"><header class="topbar"><div class="topbar-title"><strong>API Docs</strong></div><div class="top-actions"><button class="icon-btn">⌕</button><button class="icon-btn">♧</button><div class="user"><span class="avatar">PG</span><div><strong>Prince Goyal</strong><small>Super Admin</small></div></div></div></header><div class="content"><div class="split"><article class="card"><div class="card-head"><div><h3>Send Message API</h3><p>Trigger WhatsApp messages from your application.</p></div><span class="badge success">v1</span></div><div class="card-body"><div class="endpoint"><b>POST</b><code>/api/message/send</code></div><div class="field" style="margin-top:15px"><label>REQUEST BODY</label><textarea class="textarea" readonly>{
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Easy Recharge Solution — API Docs</title>
+<link rel="stylesheet" href="../app-shell.css">
+<link rel="stylesheet" href="./page.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="../"><span class="brand-mark">⚡</span><div><strong>Easy Recharge</strong><small>WhatsApp Automation</small></div></a>
+    <nav class="nav">
+      <a href="../"><span>⌂</span><b>Dashboard</b></a>
+      <a href="../device/"><span>▣</span><b>Device</b></a>
+      <a href="../send-msg/"><span>↗</span><b>Send message</b></a>
+      <a href="../inbox/"><span>▤</span><b>Inbox</b></a>
+      <a href="../reports/"><span>▥</span><b>Reports</b></a>
+      <a href="../msg-report/"><span>▤</span><b>Msg report</b></a>
+      <a href="../campaigns/"><span>◇</span><b>Campaigns</b></a>
+      <a href="../templates/"><span>▧</span><b>Templates</b></a>
+      <a href="../contacts/"><span>♙</span><b>Contacts</b></a>
+      <a href="../settings/"><span>⚙</span><b>Settings</b></a>
+      <a href="../plans/"><span>◆</span><b>Plans</b></a>
+      <a href="../api-docs/" class="active"><span>⌘</span><b>API Docs</b></a>
+    </nav>
+    <div class="sidebar-status"><span class="dot"></span><div><strong>WhatsApp Online</strong><small>All systems operational</small></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-title"><strong>API Docs</strong></div>
+      <div class="top-actions">
+        <button class="icon-btn">⌕</button>
+        <button class="icon-btn">♧</button>
+        <div class="user"><span class="avatar">PG</span><div><strong>Prince Goyal</strong><small>Super Admin</small></div></div>
+      </div>
+    </header>
+
+    <div class="content api-content">
+      <div class="api-intro">
+        <div>
+          <span class="eyebrow">DEVELOPER API</span>
+          <h1>API Documentation</h1>
+          <p>Use these endpoints to connect your application with the WhatsApp messaging service.</p>
+        </div>
+        <span class="api-version">API VERSION <b>v1</b></span>
+      </div>
+
+      <section class="api-section">
+        <div class="api-section-head">
+          <div class="api-number">01</div>
+          <div><h2>Send Message API</h2><p>Send a WhatsApp message to a single recipient or a prepared number.</p></div>
+          <span class="method-badge post">POST</span>
+        </div>
+
+        <div class="api-io">
+          <article class="api-panel request-panel">
+            <div class="panel-title">
+              <div><span class="panel-icon">↗</span><div><h3>Request URL</h3><small>Endpoint and request example</small></div></div>
+              <button class="copy-btn" data-copy="https://your-domain.com/api/message/send" type="button"><span>⧉</span> Copy</button>
+            </div>
+            <div class="url-box"><span class="method-mini">POST</span><code>https://your-domain.com/api/message/send</code></div>
+            <div class="code-title">REQUEST BODY</div>
+            <pre class="code-block"><code>{
   "number": "+919876543210",
   "message": "Hello from API",
   "session": "main"
-}</textarea></div><div class="endpoint" style="margin-top:13px"><b>GET</b><code>/api/session/status</code></div></div></article></div></div><footer class="footer">© 2026 Easy Recharge Solution · Privacy Policy · Terms & Conditions · Support</footer></main></div></body></html>
+}</code></pre>
+          </article>
+
+          <article class="api-panel response-panel">
+            <div class="panel-title">
+              <div><span class="panel-icon response">✓</span><div><h3>Response</h3><small>Successful response</small></div></div>
+              <span class="status-badge">200 OK</span>
+            </div>
+            <pre class="code-block response-code"><code>{
+  "success": true,
+  "message": "Message sent"
+}</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="api-section">
+        <div class="api-section-head">
+          <div class="api-number">02</div>
+          <div><h2>Send Message in Group</h2><p>Send a WhatsApp message directly to a selected group.</p></div>
+          <span class="method-badge post">POST</span>
+        </div>
+
+        <div class="api-io">
+          <article class="api-panel request-panel">
+            <div class="panel-title">
+              <div><span class="panel-icon">↗</span><div><h3>Request URL</h3><small>Group messaging endpoint</small></div></div>
+              <button class="copy-btn" data-copy="https://your-domain.com/api/group/message/send" type="button"><span>⧉</span> Copy</button>
+            </div>
+            <div class="url-box"><span class="method-mini">POST</span><code>https://your-domain.com/api/group/message/send</code></div>
+            <div class="code-title">REQUEST BODY</div>
+            <pre class="code-block"><code>{
+  "groupId": "120363012345678901",
+  "message": "Hello group",
+  "session": "main"
+}</code></pre>
+          </article>
+
+          <article class="api-panel response-panel">
+            <div class="panel-title">
+              <div><span class="panel-icon response">✓</span><div><h3>Response</h3><small>Successful response</small></div></div>
+              <span class="status-badge">200 OK</span>
+            </div>
+            <pre class="code-block response-code"><code>{
+  "success": true,
+  "message": "Group message sent"
+}</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <div class="api-note"><span>✦</span><div><strong>API Base URL</strong><small>Replace <b>your-domain.com</b> with the domain where your WhatsApp API is hosted.</small></div></div>
+    </div>
+
+    <footer class="footer">© 2026 Easy Recharge Solution · Privacy Policy · Terms & Conditions · Support</footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.copy-btn').forEach(function(button){
+    button.addEventListener('click',async function(){
+      const value=button.getAttribute('data-copy')||'';
+      try{
+        await navigator.clipboard.writeText(value);
+      }catch(e){
+        const temp=document.createElement('textarea');
+        temp.value=value;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand('copy');
+        temp.remove();
+      }
+      const original=button.innerHTML;
+      button.classList.add('copied');
+      button.innerHTML='<span>✓</span> Copied';
+      setTimeout(function(){button.classList.remove('copied');button.innerHTML=original},1500);
+    });
+  });
+})();
+</script>
+</body>
+</html>
