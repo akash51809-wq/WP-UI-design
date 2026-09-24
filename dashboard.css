@@ -298,3 +298,12 @@
 .exact-reference-image{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;border-radius:0!important}
 .exact-reference-scene:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.10),transparent 24%,transparent 100%);z-index:2}
 .dashboard-page .dashboard-hero{overflow:hidden!important}
+
+/* Reference boy photo — use only the boy area from the supplied reference image */
+.exact-reference-scene,.exact-reference-image{display:none!important}
+.reference-boy-photo{position:absolute!important;z-index:13!important;right:278px!important;top:2px!important;width:166px!important;height:238px!important;overflow:hidden!important;pointer-events:none!important;filter:drop-shadow(0 15px 17px rgba(39,61,50,.16))!important;transform:rotate(-2deg)!important;background:transparent!important}
+.reference-boy-photo .boy-photo-layer{position:absolute;inset:0;display:block;background-image:url("https://raw.githubusercontent.com/akash51809-wq/GSTUI/main/9d2086603a6f23cd7c10e93bc2ac86b9.jpg");background-repeat:no-repeat;background-size:520px 582px;background-position:72% 52%;mix-blend-mode:multiply;transform:scale(1.04)}
+.reference-boy-photo:after{content:"";position:absolute;left:28px;right:28px;bottom:2px;height:15px;border-radius:50%;background:radial-gradient(ellipse,rgba(39,61,50,.22),transparent 70%);filter:blur(3px);pointer-events:none}
+@media(max-width:1250px){.reference-boy-photo{right:245px!important;transform:scale(.9) rotate(-2deg)!important;transform-origin:center bottom}}
+@media(max-width:1050px){.reference-boy-photo{right:210px!important;transform:scale(.78) rotate(-2deg)!important;opacity:.92}}
+@media(max-width:760px){.reference-boy-photo{right:180px!important;opacity:.42}}
