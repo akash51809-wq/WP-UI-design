@@ -90,3 +90,49 @@
 .dashboard-hero:before{z-index:0}.dashboard-hero .hero-copy,.dashboard-hero .actions{z-index:10}
 @media(max-width:1180px){.hero-visual{right:10px!important;opacity:.72}.hero-copy{max-width:52%}}
 @media(max-width:760px){.hero-visual{right:-95px!important;opacity:.35}.hero-copy{max-width:100%}}
+
+/* 3D mini objects for stats, shortcuts and activity table */
+.stat-icon{position:relative;overflow:visible}
+.mini-device{width:17px;height:25px;border-radius:5px;background:linear-gradient(145deg,#7ee8ba,#0b8e59);border:2px solid rgba(255,255,255,.72);box-shadow:3px 4px 0 rgba(7,101,62,.35),6px 8px 10px rgba(22,167,101,.22);transform:rotate(8deg);display:block}
+.mini-device:after{content:"";position:absolute;left:4px;right:4px;bottom:3px;height:2px;border-radius:3px;background:rgba(255,255,255,.8)}
+.mini-message{width:24px;height:17px;border-radius:7px;background:linear-gradient(145deg,#ffd17c,#ec8b2b);display:grid;place-items:center;color:#fff;font-size:8px;box-shadow:3px 4px 0 #b96a19,6px 8px 10px rgba(236,141,46,.2);transform:rotate(-7deg)}
+.mini-message:after{content:"";position:absolute;bottom:7px;left:8px;width:5px;height:5px;background:#ec8b2b;transform:rotate(45deg);z-index:-1}
+.mini-plane{display:block;transform:rotate(-10deg) translate(1px,-1px);font-size:15px;text-shadow:2px 3px 0 rgba(38,92,145,.35)}
+.mini-check{width:22px;height:22px;border-radius:8px;background:linear-gradient(145deg,#ffadc4,#d95d7c);display:grid;place-items:center;color:#fff;font-size:13px;box-shadow:3px 4px 0 #a9415e,6px 8px 10px rgba(219,102,132,.2);transform:rotate(8deg)}
+.mini-users{display:flex;align-items:flex-end;gap:2px;height:23px}
+.mini-users i{display:block;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 9px 0 #c79726}
+.mini-users i:nth-child(2){width:10px;height:10px;box-shadow:0 11px 0 #c79726}
+.mini-users i:nth-child(3){opacity:.75}
+.stat-icon.stat-message{background:linear-gradient(145deg,#ffd17c,#ec8b2b)!important}
+.stat-icon.stat-send{background:linear-gradient(145deg,#8bc8f4,#3f87cf)!important}
+.stat-icon.stat-delivered{background:linear-gradient(145deg,#ffadc4,#d95d7c)!important}
+.stat-icon.stat-users{background:linear-gradient(145deg,#f5d36e,#c79726)!important}
+
+.shortcut{position:relative;overflow:hidden;align-items:center}
+.shortcut:after{content:"";position:absolute;width:42px;height:42px;right:-18px;bottom:-19px;border-radius:50%;background:rgba(22,167,101,.08)}
+.shortcut-visual{position:relative!important;width:44px!important;height:44px!important;flex:0 0 44px!important;display:grid!important;place-items:center!important;border-radius:14px!important}
+.shortcut-visual i{font-style:normal;position:relative;z-index:2}
+.shortcut-visual:before{content:"";position:absolute;width:18px;height:18px;border-radius:50%;right:-4px;top:-5px;background:rgba(255,255,255,.3);filter:blur(1px)}
+.visual-send{transform:rotate(-5deg)}
+.visual-send i{font-size:15px;transform:rotate(-8deg)}
+.visual-contact i{font-size:17px}
+.visual-report i{font-size:14px}
+.visual-settings i{font-size:14px}
+.visual-ai i{font-size:17px}
+.visual-campaign i{font-size:15px}
+
+.table td:first-child{font-weight:800}
+.service-object{display:inline-block;width:18px;height:18px;border-radius:6px;vertical-align:-5px;margin-right:7px;box-shadow:2px 3px 0 rgba(30,58,45,.16),inset 2px 2px 4px rgba(255,255,255,.45);transform:rotate(-7deg)}
+.service-object.green{background:linear-gradient(145deg,#69e4ad,#16a765)}
+.service-object.orange{background:linear-gradient(145deg,#ffd17c,#ec8b2b);transform:rotate(8deg)}
+.service-object.blue{background:linear-gradient(145deg,#91cdf5,#3f87cf);transform:rotate(6deg)}
+.service-object.pink{background:linear-gradient(145deg,#ffadc4,#d95d7c);transform:rotate(-8deg)}
+
+.dashboard-page .card{position:relative;overflow:hidden}
+.dashboard-page .card:before{content:"";position:absolute;right:18px;top:18px;width:7px;height:7px;border-radius:50%;background:#16a765;box-shadow:0 0 0 5px rgba(22,167,101,.08)}
+.dashboard-page .dash-grid>.card:first-child:after{content:"";position:absolute;right:34px;bottom:22px;width:46px;height:46px;border:8px solid rgba(22,167,101,.13);border-left-color:transparent;border-radius:50%;transform:rotate(35deg);pointer-events:none}
+.dashboard-page .dash-grid>.card:nth-child(2):after{content:"✦";position:absolute;right:22px;top:46px;color:rgba(236,141,46,.35);font-size:22px;transform:rotate(15deg);pointer-events:none}
+
+@media(max-width:760px){
+  .shortcut-visual{width:40px!important;height:40px!important;flex-basis:40px!important}
+}
