@@ -82,3 +82,12 @@ button,input{font:inherit}
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+/* Light premium login override */
+:root{--bg:#f5f1e8;--text:#183126;--muted:#718078;--cyan:#16a765;--violet:#16a765;--green:#16a765}
+body{background:radial-gradient(circle at 78% 15%,rgba(22,167,101,.12),transparent 25%),linear-gradient(135deg,#faf8f2,#eeeae1 55%,#f8f5ee);color:#183126}
+.login-card{border-color:rgba(30,58,45,.11);background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(244,241,233,.98));box-shadow:0 24px 60px rgba(48,62,53,.14),0 4px 12px rgba(48,62,53,.06),inset 0 1px #fff}
+.hero-copy h1 span{background:linear-gradient(100deg,#183126,#16a765,#e28c42);background-clip:text;-webkit-background-clip:text;color:transparent}
+.input-shell{border-color:rgba(30,58,45,.12);background:rgba(255,255,255,.82);box-shadow:inset 3px 3px 9px rgba(48,62,53,.06),0 4px 10px rgba(48,62,53,.04)}
+.input-shell input{color:#183126}.login-btn{background:linear-gradient(145deg,#35c987,#159f67);box-shadow:0 7px 0 #0d754b,0 17px 27px rgba(22,167,101,.16),inset 1px 1px 0 rgba(255,255,255,.42);color:#fff}
+.signup-btn{background:linear-gradient(145deg,#fff,#eeeae0);border-color:rgba(30,58,45,.10);color:#315044}.demo-note{border-color:rgba(22,167,101,.13);background:rgba(22,167,101,.045);color:#718078}.eyebrow{color:#14965b}
+.aurora-a{background:#35c987}.aurora-b{background:#f0ad55}.orb-a{background:linear-gradient(145deg,#35c987,#159f67)}.orb-b{background:linear-gradient(145deg,#f6b85a,#ed8050)}.orb-c{background:linear-gradient(145deg,#72a9e6,#4f7fd0)}
