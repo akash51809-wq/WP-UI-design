@@ -136,3 +136,71 @@
 @media(max-width:760px){
   .shortcut-visual{width:40px!important;height:40px!important;flex-basis:40px!important}
 }
+
+/* Reference-level decorative composition */
+.dashboard-page{position:relative}
+.dashboard-page:before{content:"";position:absolute;z-index:-1;width:360px;height:360px;left:-210px;top:210px;border-radius:50%;background:radial-gradient(circle,rgba(22,167,101,.08),transparent 68%);pointer-events:none}
+.dashboard-page:after{content:"";position:absolute;z-index:-1;width:280px;height:280px;right:-150px;top:520px;border-radius:50%;background:radial-gradient(circle,rgba(239,139,46,.08),transparent 68%);pointer-events:none}
+
+.dashboard-hero{min-height:205px!important;padding:28px 34px!important;border-radius:30px!important}
+.dashboard-hero:before{width:420px!important;height:420px!important;right:-125px!important;top:-185px!important;background:radial-gradient(circle,rgba(22,167,101,.19),rgba(22,167,101,.05) 42%,transparent 70%)!important}
+.dashboard-hero:after{width:250px!important;height:250px!important;left:42%!important;bottom:-190px!important}
+.hero-copy h1{font-size:31px!important;letter-spacing:-1.2px!important}
+.hero-copy p{font-size:12px!important;max-width:490px!important}
+.hero-visual{width:480px!important;height:205px!important;right:70px!important}
+.scene-platform{position:absolute;z-index:1;right:38px;bottom:3px;width:270px;height:26px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(41,65,54,.22),rgba(41,65,54,0) 70%);filter:blur(2px);transform:rotate(-3deg)}
+.scene-glow{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none}
+.glow-one{width:115px;height:115px;right:45px;top:35px;background:radial-gradient(circle,rgba(67,216,153,.22),transparent 68%)}
+.glow-two{width:95px;height:95px;left:95px;top:35px;background:radial-gradient(circle,rgba(239,139,46,.16),transparent 68%)}
+.scene-pill{position:absolute;z-index:10;left:12px;top:67px;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.93);border:1px solid rgba(30,58,45,.08);box-shadow:0 8px 18px rgba(48,62,53,.12),inset 0 1px #fff;color:#537066;font-size:6px;font-weight:900;letter-spacing:.8px;transform:rotate(-5deg)}
+.scene-pill span{display:inline-block;width:5px;height:5px;border-radius:50%;margin-left:4px;background:#16a765;box-shadow:0 0 0 3px rgba(22,167,101,.12)}
+.scene-spark{position:absolute;z-index:9;color:#f1b63e;font-size:17px;text-shadow:0 4px 8px rgba(199,151,38,.2)}
+.spark-one{right:184px;bottom:34px;transform:rotate(18deg)}
+.spark-two{right:4px;top:52px;font-size:12px;transform:rotate(-12deg);color:#df6686}
+.scene-phone{transform:rotate(8deg) translateY(2px)!important}
+.card-chat{right:2px!important;top:18px!important}
+.card-user{left:8px!important;bottom:12px!important}
+.card-chart{right:85px!important;bottom:1px!important}
+
+.grid4 .stat{min-height:148px!important;padding:19px!important;border-radius:23px!important}
+.grid4 .stat:before{content:"";position:absolute;left:-30px;top:-35px;width:95px;height:95px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.8),transparent 68%);pointer-events:none}
+.stat-decoration{position:absolute;z-index:1;pointer-events:none}
+.deco-ring{right:-12px;top:-10px;width:58px;height:58px;border:9px solid rgba(22,167,101,.16);border-left-color:transparent;border-radius:50%;transform:rotate(28deg)}
+.deco-orb{right:14px;top:16px;width:30px;height:30px;border-radius:50%;box-shadow:inset 6px 6px 9px rgba(255,255,255,.4),0 8px 14px rgba(48,62,53,.1)}
+.deco-orb.orange{background:linear-gradient(145deg,#ffd27c,#ec8b2b)}
+.deco-cube{right:12px;top:15px;width:31px;height:31px;border-radius:8px;box-shadow:inset 5px 5px 7px rgba(255,255,255,.35),0 7px 12px rgba(48,62,53,.11);transform:rotate(18deg)}
+.deco-cube.blue{background:linear-gradient(145deg,#8dc8f5,#3f87cf)}
+.deco-bubble{right:10px;top:15px;width:34px;height:26px;border-radius:10px 10px 10px 4px;box-shadow:0 7px 13px rgba(219,102,132,.12)}
+.deco-bubble.pink{background:linear-gradient(145deg,#ffadc4,#d95d7c);transform:rotate(-8deg)}
+.deco-star{right:14px;top:13px;width:33px;height:33px;border-radius:10px;display:grid;place-items:center;color:#fff;font-size:13px;box-shadow:0 5px 0 #94701a,0 9px 15px rgba(199,151,38,.14);transform:rotate(14deg)}
+.deco-star.yellow{background:linear-gradient(145deg,#f6d774,#c79726)}
+.stat-icon{z-index:3}
+.stat small,.stat strong,.stat>span{position:relative;z-index:3}
+
+.dash-grid{gap:16px!important}
+.dashboard-page .card{border-radius:24px!important}
+.dashboard-page .card-head{padding:20px 22px!important}
+.chart-area{padding:20px 22px 22px!important}
+.bars{height:245px!important;border-radius:19px!important;padding:17px 14px 12px!important;gap:11px!important;background:repeating-linear-gradient(to bottom,rgba(30,58,45,.065) 0,rgba(30,58,45,.065) 1px,transparent 1px,transparent 49px),linear-gradient(145deg,#fbfaf5,#f0eee7)!important}
+.bars i{border-radius:10px 10px 5px 5px!important;position:relative}
+.bars i:after{content:"";position:absolute;left:25%;right:25%;top:5px;height:5px;border-radius:4px;background:rgba(255,255,255,.35)}
+.shortcut-grid{gap:11px!important;padding:18px!important}
+.shortcut{min-height:101px!important;padding:13px!important;border-radius:19px!important}
+.shortcut-visual{box-shadow:0 5px 0 rgba(30,58,45,.18),0 10px 18px rgba(48,62,53,.11),inset 0 1px rgba(255,255,255,.6)!important;transform:perspective(80px) rotateX(5deg)}
+.shortcut:nth-child(2) .shortcut-visual{transform:perspective(80px) rotateX(5deg) rotateZ(-3deg)}
+.shortcut:nth-child(3) .shortcut-visual{transform:perspective(80px) rotateX(5deg) rotateZ(3deg)}
+.shortcut:nth-child(4) .shortcut-visual{transform:perspective(80px) rotateX(5deg) rotateZ(-4deg)}
+.shortcut:nth-child(5) .shortcut-visual{transform:perspective(80px) rotateX(5deg) rotateZ(4deg)}
+.shortcut:nth-child(6) .shortcut-visual{transform:perspective(80px) rotateX(5deg) rotateZ(-2deg)}
+.table-card{border-radius:24px!important}
+.table-wrap{padding:0 4px 4px}
+.dashboard-page .table th{height:42px}
+.dashboard-page .table td{height:50px}
+
+@media(max-width:1180px){
+  .hero-visual{right:-5px!important}
+}
+@media(max-width:760px){
+  .dashboard-hero{min-height:205px!important}
+  .hero-visual{right:-125px!important}
+}
