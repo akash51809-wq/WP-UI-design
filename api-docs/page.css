@@ -68,3 +68,12 @@
   .code-block code{font-size:11px}
   .panel-title{align-items:flex-start}
 }
+
+/* Premium 3D light page treatment */
+.table-card,.device-card,.template-card,.plan,.setting-card,.chat-list,.conversation,.chat-details,.api-section{border-color:rgba(30,58,45,.10)!important;background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(246,243,235,.96))!important;box-shadow:0 18px 40px rgba(48,62,53,.10),0 3px 10px rgba(48,62,53,.05),inset 0 1px rgba(255,255,255,.95)!important}
+.device-meta span,.chat-item,.template-card,.plan,.setting-card{background:rgba(255,255,255,.68)!important;border-color:rgba(30,58,45,.08)!important}
+.device-card h3,.template-card h3,.setting-card strong,.plan h3,.chat-item strong{color:#183126}.device-card p,.template-card p,.setting-card small,.chat-item small,.muted{color:#718078!important}
+.phone{background:linear-gradient(145deg,#f7f4ec,#dfe8df)!important;border-color:#d3d8cf!important;box-shadow:0 20px 38px rgba(48,62,53,.16)!important}.phone-wall,.chat-wall{background:linear-gradient(145deg,#eef3ed,#e2ebe4)!important}.bubble{background:#fff!important;color:#365248!important;box-shadow:0 5px 12px rgba(48,62,53,.08)}.bubble.out{background:linear-gradient(145deg,#35c987,#159f67)!important;color:#fff!important}
+.input,.select,.textarea,.toggle-row,.status-box{background:rgba(255,255,255,.86)!important;color:#183126!important;border-color:rgba(30,58,45,.11)!important}.code-block,.endpoint{background:#edf1ea!important;color:#315044!important}
+.settings-subnav a{background:#fff!important;color:#718078!important;border-color:rgba(30,58,45,.10)!important}.settings-subnav a.active{color:#17613f!important;background:rgba(22,167,101,.08)!important;border-color:rgba(22,167,101,.18)!important}
+.setting-card>span{background:linear-gradient(145deg,rgba(22,167,101,.14),rgba(22,167,101,.05))!important;color:#15965e!important}.plan strong,.plan-price{color:#183126!important}.plan-price small{color:#718078!important}
