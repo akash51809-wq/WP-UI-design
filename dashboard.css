@@ -291,3 +291,10 @@
 .dashboard-page .hero-copy{position:relative;z-index:20}
 .dashboard-page .grid4 .stat{overflow:hidden}
 .dashboard-page .grid4 .stat:before{content:"";position:absolute;right:-20px;top:-28px;width:95px;height:95px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75),transparent 70%);pointer-events:none}
+
+
+ /* Exact reference image placement */
+.exact-reference-scene{position:absolute!important;right:0!important;top:0!important;width:54%!important;height:100%!important;overflow:hidden!important;display:flex!important;align-items:center!important;justify-content:center!important;pointer-events:none!important;z-index:10!important}
+.exact-reference-image{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;border-radius:0!important}
+.exact-reference-scene:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.10),transparent 24%,transparent 100%);z-index:2}
+.dashboard-page .dashboard-hero{overflow:hidden!important}
