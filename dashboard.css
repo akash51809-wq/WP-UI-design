@@ -394,3 +394,10 @@
   .dashboard-page .dashboard-hero .hero-copy h1{font-size:18px!important}
   .dashboard-page .dashboard-hero .hero-copy p{font-size:8px!important}
 }
+
+/* Current plan — styled inside greeting hero */
+.dashboard-page .hero-plan{position:relative;z-index:25;margin-left:auto;flex:0 0 auto;display:flex;align-items:center;gap:12px;padding:11px 15px;border:1px solid rgba(30,58,45,.10);border-radius:16px;background:rgba(255,255,255,.78);box-shadow:0 10px 22px rgba(48,62,53,.10),inset 0 1px #fff;backdrop-filter:blur(8px);transform:translateY(1px)}
+.dashboard-page .hero-plan .plan-orb{width:31px;height:31px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(145deg,#ffd978,#e9962e);color:#fff;font-size:11px;box-shadow:0 4px 0 #b96a18,0 8px 13px rgba(236,141,46,.16)}
+.dashboard-page .hero-plan .plan-main{display:flex;flex-direction:column;gap:3px;min-width:78px}.dashboard-page .hero-plan .plan-main span{font-size:6px!important;line-height:1!important;letter-spacing:1px;font-weight:900;color:#819087!important;background:none!important;padding:0!important}.dashboard-page .hero-plan .plan-main strong{font-size:11px!important;line-height:1.1!important;color:#183126!important;margin:0!important}.dashboard-page .hero-plan .plan-divider{width:1px;height:27px;background:rgba(30,58,45,.10)}.dashboard-page .hero-plan .validity strong{color:#15935e!important}.dashboard-page .hero-plan .validity{min-width:82px}
+@media(max-width:760px){.dashboard-page .hero-plan{padding:8px 10px;gap:8px;border-radius:13px}.dashboard-page .hero-plan .plan-orb{width:26px;height:26px;font-size:9px}.dashboard-page .hero-plan .plan-main{min-width:64px}.dashboard-page .hero-plan .plan-main span{font-size:5px!important}.dashboard-page .hero-plan .plan-main strong{font-size:9px!important}.dashboard-page .hero-plan .plan-divider{height:23px}}
+@media(max-width:520px){.dashboard-page .hero-plan{position:absolute;right:14px;top:12px;transform:none}.dashboard-page .hero-copy{padding-right:150px!important}.dashboard-page .dashboard-hero .hero-copy h1{font-size:17px!important}.dashboard-page .dashboard-hero .hero-copy p{font-size:7px!important}}
