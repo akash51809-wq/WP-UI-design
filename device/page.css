@@ -61,3 +61,21 @@
 .composer-card,.guide-card{background:linear-gradient(145deg,#fff,#f2efe7)!important}.composer-head,.guide-head,.card-head{border-bottom-color:rgba(30,58,45,.08)!important}.composer-head p,.guide-head p,.toolbar-stats span{color:#718078!important}.toolbar-stats b{color:#17613f!important}
 .live-pill,.secure-chip{background:rgba(22,167,101,.07)!important;color:#148957!important;border-color:rgba(22,167,101,.15)!important}.step-badge,.guide-icon{background:linear-gradient(145deg,#35c987,#159f67)!important;color:#fff!important;box-shadow:0 4px 0 #0d754b,0 9px 17px rgba(22,167,101,.15),inset 0 1px rgba(255,255,255,.4)!important}
 .shortcut{background:linear-gradient(145deg,#fff,#f0ede5)!important;border-color:rgba(30,58,45,.09)!important;box-shadow:0 12px 24px rgba(48,62,53,.09)!important}.shortcut b{color:#365248!important}.bars{background:repeating-linear-gradient(to bottom,rgba(30,58,45,.08) 0,rgba(30,58,45,.08) 1px,transparent 1px,transparent 44px)!important}.bars i{background:linear-gradient(180deg,#35c987,#159f67)!important;box-shadow:0 5px 16px rgba(22,167,101,.16)!important}
+
+
+/* Device limit + compact 3D session slots */
+.device-limit-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:12px;padding:13px 16px;border:1px solid rgba(30,58,45,.10);border-radius:16px;background:linear-gradient(145deg,#fff,#f1eee6);box-shadow:0 12px 25px rgba(48,62,53,.08),inset 0 1px #fff}
+.device-limit-head h1{margin:3px 0 0;font-size:20px;color:#183126}
+.limit-pill{min-width:105px;padding:7px 13px;text-align:center;border-radius:12px;background:linear-gradient(145deg,#eef4ed,#dce8df);border:1px solid rgba(22,167,101,.14);box-shadow:0 5px 0 #cbd7cd,0 10px 18px rgba(48,62,53,.08)}
+.limit-pill small{display:block;color:#718078;font-size:7px;letter-spacing:1px}.limit-pill strong{display:block;color:#17613f;font-size:22px;line-height:1.05;margin-top:2px}
+.device-slots{grid-template-columns:repeat(4,1fr);gap:12px;margin-top:0}
+.device-slots .device-card{min-height:248px;padding:14px;border-radius:18px;position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.device-slots .device-card:hover{transform:translateY(-4px);box-shadow:0 22px 42px rgba(48,62,53,.14),0 4px 12px rgba(48,62,53,.07),inset 0 1px #fff!important}
+.dp-wrap{position:relative;width:44px;height:44px}.device-dp{width:44px;height:44px;display:block;border-radius:14px;object-fit:cover;border:3px solid #fff;box-shadow:0 7px 15px rgba(48,62,53,.18)}
+.online-dot{position:absolute;right:-1px;bottom:-1px;width:11px;height:11px;border-radius:50%;background:#20b978;border:2px solid #fff;box-shadow:0 2px 6px rgba(22,167,101,.35)}
+.device-info{margin-top:11px}.device-info h3{font-size:13px!important;margin:0 0 3px!important}.device-info p{font-size:9px!important;margin:0!important}.device-label{display:inline-block;margin-top:7px;padding:4px 7px;border-radius:7px;background:#eef4ed;color:#507064;font-size:7px}
+.device-slots .device-meta{margin:12px 0}.device-slots .device-meta span{padding:7px}.device-slots .device-meta b{font-size:9px}.device-slots .btn{width:100%;font-size:8px;padding:8px 10px}
+.qr-card{display:flex;flex-direction:column;justify-content:center;text-align:center}.qr-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:125px;border:1px dashed rgba(22,167,101,.25);border-radius:14px;background:linear-gradient(145deg,#f4f7f1,#e8efe8)}
+.qr-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#fff,#e2e9e1);color:#17613f;font-size:34px;line-height:1;box-shadow:0 7px 15px rgba(48,62,53,.10),inset 0 1px #fff}
+.qr-placeholder strong{font-size:11px;color:#183126;margin-top:7px}.qr-placeholder small{font-size:7px;color:#718078;margin-top:3px}.qr-slot{display:flex;justify-content:space-between;align-items:center;margin:10px 0 9px;padding:7px 8px;border-radius:9px;background:rgba(255,255,255,.72);font-size:7px}.qr-slot span{color:#718078}.qr-slot b{color:#17613f}
+@media(max-width:1100px){.device-slots{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.device-limit-head{padding:11px 12px}.device-limit-head h1{font-size:17px}.device-slots{grid-template-columns:1fr}.limit-pill{min-width:88px}.device-slots .device-card{min-height:230px}}
