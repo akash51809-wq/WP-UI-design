@@ -192,3 +192,28 @@ body:before{
 .shortcut:nth-child(3n+1) span{background:linear-gradient(145deg,#35c987,#159f67);color:#fff}
 .shortcut:nth-child(3n+2) span{background:linear-gradient(145deg,#f6b85a,#ed8050);color:#fff}
 .shortcut:nth-child(3n) span{background:linear-gradient(145deg,#72a9e6,#4f7fd0);color:#fff}
+
+
+/* Global readable typography — larger + stronger across all pages */
+body,.app,.shell,.main,.content{font-size:15px!important;font-weight:600!important}
+.sidebar,.sidebar *{font-weight:700!important}
+.sidebar a,.nav-item,.menu-item{font-size:14px!important}
+.topbar,.topbar *{font-weight:700!important}
+.topbar-title strong{font-size:17px!important}.topbar-title small{font-size:12px!important}
+.content h1,.content h2,.content h3,.content h4{font-weight:800!important}
+.card-head h2,.card-head h3,.section-title{font-size:18px!important;font-weight:800!important}
+.card-head p,.muted,.description,.helper,.empty{font-size:13px!important;font-weight:600!important}
+.stat small{font-size:12px!important;font-weight:700!important}.stat strong{font-size:25px!important;font-weight:800!important}.stat span{font-size:11px!important;font-weight:800!important}
+.table th{font-size:13px!important;font-weight:800!important}.table td{font-size:13px!important;font-weight:600!important}
+.btn,.icon-btn{font-size:13px!important;font-weight:800!important}
+.input,.select,.textarea{font-size:14px!important;font-weight:600!important}.input::placeholder,.textarea::placeholder{font-size:13px!important;font-weight:600!important}
+.badge,.tag,.pill{font-size:12px!important;font-weight:800!important}
+.list-item{font-size:14px!important;font-weight:600!important}.list-item strong{font-size:14px!important;font-weight:800!important}.list-item small{font-size:12px!important;font-weight:600!important}
+.footer{font-size:12px!important;font-weight:600!important}
+@media(max-width:760px){
+  body,.app,.shell,.main,.content{font-size:14px!important}
+  .sidebar a,.nav-item,.menu-item{font-size:13px!important}
+  .topbar-title strong{font-size:15px!important}.topbar-title small{font-size:11px!important}
+  .card-head h2,.card-head h3,.section-title{font-size:16px!important}
+  .table th,.table td{font-size:12px!important}.input,.select,.textarea{font-size:13px!important}
+}
