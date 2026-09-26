@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Easy Recharge Solution — Groups</title>
+<link rel="stylesheet" href="../app-shell.css"><link rel="stylesheet" href="./page.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar"><a class="brand" href="../"><span class="brand-mark">⚡</span><div><strong>Easy Recharge</strong><small>WhatsApp Automation</small></div></a>
+<nav class="nav">
+<a href="../"><span>⌂</span><b>Dashboard</b></a><a href="../device/"><span>▣</span><b>Device</b></a><a href="../send-msg/"><span>↗</span><b>Send message</b></a><a href="../inbox/"><span>▤</span><b>Inbox</b></a><a href="../group/" class="active"><span>▦</span><b>Group</b></a>
+<div class="nav-group is-open"><div class="nav-parent" aria-expanded="true"><span>▥</span><b>Reports</b><i class="nav-caret">⌄</i></div><div class="nav-submenu"><a href="../msg-report/"><span>↳</span><b>Msg Report</b></a></div></div>
+<a href="../campaigns/"><span>◇</span><b>Campaigns</b></a><a href="../templates/"><span>▧</span><b>Templates</b></a><a href="../contacts/"><span>♙</span><b>Contacts</b></a><a href="../settings/"><span>⚙</span><b>Settings</b></a><a href="../plans/"><span>◆</span><b>Plans</b></a><a href="../api-docs/"><span>⌘</span><b>API Docs</b></a>
+</nav><div class="sidebar-status"><span class="dot"></span><div><strong>WhatsApp Online</strong><small>All systems operational</small></div></div></aside>
+<main class="main"><header class="topbar"><div class="topbar-title"><strong>Groups</strong></div><div class="top-actions"><button class="icon-btn">⌕</button><button class="icon-btn">♧</button><div class="user"><span class="avatar">PG</span><div><strong>Prince Goyal</strong><small>Super Admin</small></div></div></div></header>
+<div class="content group-page">
+<section class="group-toolbar card">
+<div class="group-control"><label>CHOOSE SCAN NUMBER</label><select id="scanNumber" class="select"><option value="main">Prince Goyal · +91 98765 43210</option><option value="business">Business Account · +91 98123 45678</option></select></div>
+<div class="group-count"><small>NUMBER OF GROUPS</small><strong id="groupCount">24</strong><span>groups found</span></div>
+<button class="refresh-btn" id="refreshGroups" type="button">↻ <span>Refresh</span></button>
+</section>
+<section class="card group-list-card">
+<div class="card-head"><div><h3>WhatsApp Groups</h3><p id="scanStatus">Groups for Prince Goyal · +91 98765 43210</p></div><div class="select-all"><input type="checkbox" id="selectAll"><label for="selectAll">Select All</label></div></div>
+<div class="table-wrap"><table class="table group-table"><thead><tr><th>Select</th><th>Group Name</th><th>Members</th><th>Group ID</th><th>My Role</th></tr></thead>
+<tbody id="groupRows">
+<tr><td><input class="group-check" type="checkbox"></td><td><b>Easy Recharge Dealers</b></td><td>148</td><td>120363041928374650</td><td><span class="role admin">Admin</span></td></tr>
+<tr><td><input class="group-check" type="checkbox"></td><td><b>Recharge API Support</b></td><td>96</td><td>120363059182736451</td><td><span class="role admin">Admin</span></td></tr>
+<tr><td><input class="group-check" type="checkbox"></td><td><b>Business Updates</b></td><td>72</td><td>120363074615283904</td><td><span class="role member">Member</span></td></tr>
+<tr><td><input class="group-check" type="checkbox"></td><td><b>Customer Help Desk</b></td><td>54</td><td>120363088491027365</td><td><span class="role member">Member</span></td></tr>
+<tr><td><input class="group-check" type="checkbox"></td><td><b>Team Operations</b></td><td>38</td><td>120363093827164520</td><td><span class="role admin">Admin</span></td></tr>
+<tr><td><input class="group-check" type="checkbox"></td><td><b>Marketing Community</b></td><td>215</td><td>120363106491827344</td><td><span class="role member">Member</span></td></tr>
+</tbody></table></div></section>
+</div><footer class="footer">© 2026 Easy Recharge Solution · Privacy Policy · Terms & Conditions · Support</footer></main></div>
+<script>
+(function(){
+ const scan=document.getElementById('scanNumber'),count=document.getElementById('groupCount'),status=document.getElementById('scanStatus'),all=document.getElementById('selectAll'),refresh=document.getElementById('refreshGroups');
+ function sync(){const business=scan.value==='business';count.textContent=business?'18':'24';status.textContent='Groups for '+(business?'Business Account · +91 98123 45678':'Prince Goyal · +91 98765 43210');}
+ scan.addEventListener('change',sync); refresh.addEventListener('click',function(){refresh.classList.add('spin');sync();setTimeout(()=>refresh.classList.remove('spin'),500)});
+ all.addEventListener('change',()=>document.querySelectorAll('.group-check').forEach(x=>x.checked=all.checked));
+ document.querySelectorAll('.group-check').forEach(x=>x.addEventListener('change',()=>{all.checked=[...document.querySelectorAll('.group-check')].every(x=>x.checked)}));
+})();
+</script>
+</body></html>
