@@ -290,3 +290,104 @@
 /* Reclaim toolbar space */
 .send-content>.send-layout{margin-top:0!important}
 .send-content{padding-top:8px!important}
+
+
+/* Final Send Message layout polish */
+.compact-top-grid{
+  grid-template-columns:minmax(210px,1fr) minmax(125px,.62fr) minmax(220px,.92fr)!important;
+  gap:9px!important;
+}
+.account-field .compact-select,.mode-field .compact-select{
+  height:38px!important;
+  padding:0 10px!important;
+  border-radius:11px!important;
+  font-size:11px!important;
+}
+.compact-schedule{
+  min-width:0!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  height:38px!important;
+  min-height:38px!important;
+  padding:4px 6px!important;
+  gap:5px!important;
+  overflow:hidden!important;
+}
+.schedule-mini-head{gap:4px!important}
+.schedule-mini-head span{width:20px!important;height:20px!important;border-radius:7px!important;font-size:10px!important;flex:0 0 20px}
+.schedule-mini-head label{font-size:8px!important}
+.schedule-mini-fields{gap:4px!important;min-width:0!important}
+.compact-input{
+  height:25px!important;
+  min-width:0!important;
+  width:100%!important;
+  padding:0 5px!important;
+  border-radius:7px!important;
+  font-size:8px!important;
+}
+.compact-schedule>strong{font-size:8px!important;max-width:65px!important;overflow:hidden;text-overflow:ellipsis}
+.compact-schedule>small{display:none!important}
+
+.recipient-tools{gap:9px!important}
+.round-tool{
+  width:56px!important;
+  height:44px!important;
+  border-radius:15px!important;
+  position:relative!important;
+  font-size:16px!important;
+  font-weight:1000!important;
+  letter-spacing:.1px!important;
+  border:1px solid rgba(255,255,255,.5)!important;
+  box-shadow:0 5px 0 rgba(30,58,45,.22),0 9px 18px rgba(48,62,53,.14),inset 0 2px rgba(255,255,255,.55)!important;
+}
+.round-tool span{
+  font-size:8px!important;
+  font-weight:900!important;
+  margin-top:3px!important;
+  letter-spacing:.15px!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.22)!important;
+}
+.sample-btn{background:linear-gradient(145deg,#668cff,#294fc4)!important}
+.upload-btn{background:linear-gradient(145deg,#31d38f,#087e51)!important}
+.duplicate-btn{background:linear-gradient(145deg,#ffc04f,#e76820)!important}
+.round-tool:hover{transform:translateY(-3px) scale(1.03)!important}
+.upload-btn.selected{box-shadow:0 5px 0 #075b3a,0 0 0 3px rgba(22,167,101,.16),0 10px 20px rgba(48,62,53,.14),inset 0 2px rgba(255,255,255,.55)!important}
+
+.message-tools .tool-btn{
+  color:#17372a!important;
+  background:linear-gradient(145deg,#ffffff,#e9eee8)!important;
+  border:1px solid rgba(30,58,45,.10)!important;
+  font-weight:900!important;
+  text-shadow:none!important;
+}
+.message-tools .tool-btn span{
+  color:#17372a!important;
+  font-size:10px!important;
+  font-weight:900!important;
+}
+.message-tools .voice-tool{
+  color:#fff!important;
+  background:linear-gradient(145deg,#9a58e8,#6b2fc0)!important;
+  border-color:rgba(107,47,192,.22)!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.18)!important;
+}
+.message-tools .voice-tool span{color:#fff!important}
+.message-tools .voice-tool.active{
+  background:linear-gradient(145deg,#ffb347,#e76820)!important;
+}
+.message-tools .voice-tool.active span{color:#fff!important}
+.message-tools #emojiBtn{
+  color:#17372a!important;
+  background:linear-gradient(145deg,#fff7cf,#f1c94d)!important;
+}
+.message-tools #emojiBtn span{color:#17372a!important}
+
+@media(max-width:1050px){
+  .compact-top-grid{grid-template-columns:minmax(190px,1fr) minmax(115px,.65fr)!important}
+  .compact-schedule{grid-column:1/-1!important}
+}
+@media(max-width:680px){
+  .compact-top-grid{grid-template-columns:1fr!important}
+  .compact-schedule{grid-column:auto!important;height:auto!important;min-height:44px!important}
+  .round-tool{width:52px!important;height:42px!important}
+}
