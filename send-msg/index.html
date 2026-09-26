@@ -156,6 +156,8 @@
   const scheduleLabel=document.getElementById('scheduleLabel');
   const message=document.getElementById('messageText');
   const recipients=document.getElementById('recipientNumbers');
+  const groupNumbers=sessionStorage.getItem('groupSelectedNumbers');
+  if(groupNumbers){recipients.value=groupNumbers;sessionStorage.removeItem('groupSelectedNumbers');}
   const sampleExcel=document.getElementById('sampleExcel');
   const excelUpload=document.getElementById('excelUpload');
   const removeDuplicates=document.getElementById('removeDuplicates');
