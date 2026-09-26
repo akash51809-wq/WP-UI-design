@@ -71,53 +71,31 @@ if(localStorage.getItem("wpui_logged_in")==="1" || sessionStorage.getItem("wpui_
       <div class="card-top">
         <div>
           <span class="eyebrow">WELCOME BACK</span>
-          <h2>Sign in to your workspace</h2>
-          <p>Use your mobile number and password to continue.</p>
+          <h2>Preview your workspace</h2>
+          <p>Open the interface preview without entering any personal or account information.</p>
         </div>
         <span class="live-pill"><i></i> Secure</span>
       </div>
 
-      <form id="loginForm" autocomplete="on" novalidate>
-        <label class="field-label" for="mobile">MOBILE NUMBER</label>
-        <div class="input-shell">
-          <span class="prefix">+91</span>
-          <input id="mobile" name="mobile" type="tel" inputmode="numeric" maxlength="10" placeholder="Enter 10 digit mobile number" autocomplete="tel" required>
-        </div>
+      <div id="loginForm" class="demo-access">
+        <div class="field-label">DEMO PREVIEW</div>
+        <p class="demo-note-text">यह GitHub Pages केवल UI preview के लिए है। यहाँ कोई password, mobile number या sensitive information दर्ज न करें।</p>
 
-        <div class="password-label-row">
-          <label class="field-label" for="password">PASSWORD</label>
-          <a href="../forgot-password/" id="forgotLink">Forgot password?</a>
-        </div>
-        <div class="input-shell">
-          <span class="input-icon">⌁</span>
-          <input id="password" name="password" type="password" minlength="4" placeholder="Enter your password" autocomplete="current-password" required>
-          <button type="button" class="show-pass" id="togglePassword" aria-label="Show password">◉</button>
-        </div>
-
-        <label class="remember-row">
-          <input id="remember" type="checkbox" checked>
-          <span class="fake-check"></span>
-          <span>Keep me signed in</span>
-        </label>
-
-        <button class="login-btn" type="submit">
-          <span>Sign In</span>
-          <b>➜</b>
-        </button>
+        <button class="login-btn" type="button" id="demoBtn"><span>Open Dashboard Preview</span><b>➜</b></button>
 
         <div class="login-status" id="loginStatus" role="status" aria-live="polite"></div>
-      </form>
+      </div>
 
-      <div class="divider"><span>NEW TO EASY RECHARGE?</span></div>
+      <div class="divider"><span>UI PREVIEW MODE</span></div>
 
       <a class="signup-btn" href="../signup/">
-        <span>Create new account</span>
+        <span>Open dashboard preview</span>
         <b>↗</b>
       </a>
 
       <div class="demo-note">
         <span>✦</span>
-        <p>Frontend UI demo: real authentication can be connected later without changing this design.</p>
+        <p>Demo mode only. Do not enter passwords, OTPs, card details or other sensitive information on this GitHub Pages preview.</p>
       </div>
     </div>
 
@@ -129,51 +107,7 @@ if(localStorage.getItem("wpui_logged_in")==="1" || sessionStorage.getItem("wpui_
 </main>
 
 <script>
-const form=document.getElementById("loginForm");
-const mobile=document.getElementById("mobile");
-const password=document.getElementById("password");
-const toggle=document.getElementById("togglePassword");
-const status=document.getElementById("loginStatus");
-const remember=document.getElementById("remember");
-
-mobile.addEventListener("input",()=>{
-  mobile.value=mobile.value.replace(/\D/g,"").slice(0,10);
-});
-toggle.addEventListener("click",()=>{
-  const next=password.type==="password"?"text":"password";
-  password.type=next;
-  toggle.textContent=next==="password"?"◉":"◌";
-});
-form.addEventListener("submit",(e)=>{
-  e.preventDefault();
-  const number=mobile.value.trim();
-  const pass=password.value.trim();
-  if(!/^\d{10}$/.test(number)){
-    status.textContent="Enter a valid 10 digit mobile number.";
-    status.className="login-status error";
-    mobile.focus();
-    return;
-  }
-  if(pass.length<4){
-    status.textContent="Password must contain at least 4 characters.";
-    status.className="login-status error";
-    password.focus();
-    return;
-  }
-  status.textContent="Signing you in…";
-  status.className="login-status loading";
-  const go=()=>{
-    localStorage.setItem("wpui_logged_in","1");
-    localStorage.setItem("wpui_mobile",number);
-    window.location.replace("../");
-  };
-  if(remember.checked){
-    localStorage.setItem("wpui_logged_in","1");
-    localStorage.setItem("wpui_mobile",number);
-  }else{
-    sessionStorage.setItem("wpui_logged_in","1");
-    sessionStorage.setItem("wpui_mobile",number);
-  }
+document.getElementById("demoBtn")?.addEventListener("click",()=>{
   window.location.replace("../");
 });
 </script>
