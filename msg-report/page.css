@@ -147,3 +147,31 @@
 @media(max-width:1250px){.filter-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.message-field{grid-column:span 2}}
 @media(max-width:900px){.filter-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.message-field{grid-column:span 2}}
 @media(max-width:680px){.filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.message-field{grid-column:1/-1}}
+
+/* Ultra compact report layout */
+.filter-head{padding:8px 14px;min-height:42px;box-sizing:border-box}
+.filter-head>div:first-child{display:flex;align-items:center;gap:9px}
+.filter-head h3{font-size:13px}
+.filter-head p{font-size:8px;margin:0}
+.filter-inline{margin-left:auto}
+.inline-reset{display:flex;align-items:center;gap:5px}
+.inline-reset label{font-size:7px;margin:0}
+.filter-grid{padding:8px 14px 10px;gap:6px}
+.filter-field{gap:3px}
+.filter-field label{font-size:7px}
+.filter-field .input,.filter-field .select{height:33px;padding:6px 8px;font-size:9px;border-radius:7px}
+.filter-clear{height:30px;padding:5px 8px;font-size:8px}
+.table-card{margin-top:10px}
+.compact-card-head{min-height:48px!important;padding:8px 12px!important}
+.compact-card-head h3{font-size:13px!important;margin:0!important}
+.compact-card-head p{font-size:8px!important;margin:2px 0 0!important}
+.export-btn{height:29px!important;padding:5px 9px!important;font-size:8px!important}
+.compact-report-table{min-width:900px}
+.compact-report-table th{padding:7px 8px!important;font-size:8px!important;white-space:nowrap}
+.compact-report-table td{padding:7px 8px!important;font-size:9px!important;line-height:1.2;white-space:nowrap}
+.compact-report-table tbody tr{height:34px}
+.compact-report-table .badge{padding:3px 6px!important;font-size:7px!important;border-radius:6px}
+.table-action{border:1px solid rgba(30,58,45,.12);border-radius:6px;padding:4px 8px;background:linear-gradient(145deg,#fff,#e9e5db);color:#17613f;font-size:8px;font-weight:800;cursor:pointer;box-shadow:0 2px 0 #d4d0c6}
+.table-action:hover{transform:translateY(-1px)}
+@media(max-width:900px){.filter-head>div:first-child{display:block}.filter-head p{margin-top:2px}.filter-grid{padding:8px 10px}.compact-card-head{padding:7px 10px!important}}
+@media(max-width:680px){.filter-head{align-items:flex-start}.filter-head>div:first-child{display:block}.inline-reset{gap:4px}.filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
