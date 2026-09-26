@@ -189,3 +189,13 @@
 .compact-report-table td{font-size:10px!important;font-weight:700!important;padding:8px 9px!important}
 .compact-report-table .badge{font-size:8px!important;font-weight:900!important}
 .table-action{font-size:9px!important;font-weight:900!important}
+
+/* Message report pagination */
+.report-pagination{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-top:1px solid rgba(30,58,45,.08);background:rgba(255,255,255,.42)}
+.page-numbers{display:flex;gap:5px}
+.page-number,.page-nav{height:30px;min-width:30px;padding:0 9px;border:1px solid rgba(30,58,45,.12);border-radius:8px;background:linear-gradient(145deg,#fff,#e9e5db);color:#315044;font-size:10px;font-weight:900;cursor:pointer;box-shadow:0 3px 0 #d4d0c6}
+.page-number.active{background:linear-gradient(145deg,#35c987,#159f67);color:#fff;border-color:#159f67;box-shadow:0 3px 0 #0d754b}
+.page-number:hover:not(.active),.page-nav:hover:not(:disabled){transform:translateY(-1px)}
+.page-nav:disabled{opacity:.45;cursor:not-allowed;box-shadow:0 2px 0 #d4d0c6}
+.page-info{margin-left:8px;color:#718078;font-size:9px;font-weight:800}
+@media(max-width:560px){.report-pagination{justify-content:flex-start;overflow-x:auto}.page-info{margin-left:4px;white-space:nowrap}}
