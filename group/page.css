@@ -6,3 +6,5 @@
 @media(max-width:760px){.member-head strong{font-size:23px}.member-row>span:nth-child(2){font-size:12px}.member-row small{font-size:10px}}
 
 .download-list-btn{position:absolute;top:14px;right:14px;height:34px;padding:0 13px;border:0;border-radius:10px;background:linear-gradient(145deg,#4f7df3,#294db8);color:#fff;font-size:10px;font-weight:900;cursor:pointer;box-shadow:0 4px 0 #213b91,0 8px 16px rgba(41,77,184,.18),inset 0 1px rgba(255,255,255,.5);z-index:2}.download-list-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #213b91}.group-right-placeholder{position:relative;padding-top:58px}
+
+.download-list-btn,.send-selected-btn{position:absolute;top:14px;height:34px;padding:0 13px;border:0;border-radius:10px;color:#fff;font-size:10px;font-weight:900;cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.18),0 8px 16px rgba(40,55,50,.14),inset 0 1px rgba(255,255,255,.5);z-index:2}.download-list-btn{right:132px;background:linear-gradient(145deg,#4f7df3,#294db8)}.send-selected-btn{right:14px;background:linear-gradient(145deg,#16b873,#087e50)}.download-list-btn:active,.send-selected-btn:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,.18)}
