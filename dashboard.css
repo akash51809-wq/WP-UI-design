@@ -424,3 +424,10 @@
 @media(max-width:900px){.dashboard-page .hero-plan{right:16px!important;gap:10px!important}.dashboard-page .hero-plan .plan-main strong{font-size:13px!important}.dashboard-page .dashboard-hero .hero-copy{max-width:calc(100% - 250px)!important}}
 @media(max-width:680px){.dashboard-page .hero-plan{left:17px!important;right:17px!important;bottom:10px!important;top:auto!important;transform:none!important;justify-content:center!important;gap:10px!important}.dashboard-page .dashboard-hero .hero-copy{max-width:100%!important}.dashboard-page .hero-plan .plan-main strong{font-size:12px!important}}
 @media(max-width:430px){.dashboard-page .hero-plan{left:12px!important;right:12px!important;gap:8px!important}.dashboard-page .hero-plan .plan-main span{font-size:6px!important}.dashboard-page .hero-plan .plan-main strong{font-size:11px!important}}
+
+/* Admin dashboard hero WhatsApp 3D icon */
+.hero-whatsapp{position:absolute;right:22px;top:50%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:86px;height:86px;pointer-events:none}
+.whatsapp-3d-icon{width:68px;height:68px;border-radius:22px;background:linear-gradient(145deg,#25d366,#128c7e);display:flex;align-items:center;justify-content:center;box-shadow:8px 10px 0 rgba(18,140,126,.16),0 14px 28px rgba(18,140,126,.25),inset 3px 3px 7px rgba(255,255,255,.38),inset -5px -6px 10px rgba(0,0,0,.16);transform:rotate(-6deg);position:relative}
+.whatsapp-3d-icon:before{content:"";position:absolute;inset:7px;border-radius:17px;border:1px solid rgba(255,255,255,.28)}
+.whatsapp-3d-icon span{width:43px;height:43px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:#128c7e;font-size:34px;font-weight:900;line-height:1;transform:rotate(6deg);box-shadow:0 5px 9px rgba(0,0,0,.16)}
+@media(max-width:680px){.hero-whatsapp{right:16px;top:auto;bottom:14px;transform:none;width:58px;height:58px}.whatsapp-3d-icon{width:50px;height:50px;border-radius:16px}.whatsapp-3d-icon span{width:32px;height:32px;font-size:25px;border-radius:50%}}
