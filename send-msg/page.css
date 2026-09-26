@@ -286,3 +286,7 @@
 .composer-card{box-shadow:0 25px 55px rgba(48,62,53,.13),0 5px 14px rgba(48,62,53,.06),inset 0 1px #fff!important}.field label{font-weight:900!important}
 @media(max-width:1050px){.compact-top-grid{grid-template-columns:1fr 1fr!important}.compact-schedule{grid-column:1/-1}.recipient-head{align-items:flex-start!important;flex-direction:column}.recipient-tools{margin-left:0}.recipient-note{margin-left:5px}}
 @media(max-width:680px){.compact-top-grid{grid-template-columns:1fr!important}.compact-schedule{grid-column:auto}.recipient-head{gap:8px!important}.recipient-tools{width:100%;justify-content:flex-end}.round-tool{width:44px;height:38px}.recipient-note{display:block;margin:3px 0 0!important}.compact-schedule{height:auto!important;min-height:46px!important}.schedule-mini-fields{min-width:0}.compact-input{width:100%}}
+
+/* Reclaim toolbar space */
+.send-content>.send-layout{margin-top:0!important}
+.send-content{padding-top:8px!important}
