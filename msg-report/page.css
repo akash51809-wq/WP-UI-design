@@ -128,3 +128,22 @@
 .composer-card,.guide-card{background:linear-gradient(145deg,#fff,#f2efe7)!important}.composer-head,.guide-head,.card-head{border-bottom-color:rgba(30,58,45,.08)!important}.composer-head p,.guide-head p,.toolbar-stats span{color:#718078!important}.toolbar-stats b{color:#17613f!important}
 .live-pill,.secure-chip{background:rgba(22,167,101,.07)!important;color:#148957!important;border-color:rgba(22,167,101,.15)!important}.step-badge,.guide-icon{background:linear-gradient(145deg,#35c987,#159f67)!important;color:#fff!important;box-shadow:0 4px 0 #0d754b,0 9px 17px rgba(22,167,101,.15),inset 0 1px rgba(255,255,255,.4)!important}
 .shortcut{background:linear-gradient(145deg,#fff,#f0ede5)!important;border-color:rgba(30,58,45,.09)!important;box-shadow:0 12px 24px rgba(48,62,53,.09)!important}.shortcut b{color:#365248!important}.bars{background:repeating-linear-gradient(to bottom,rgba(30,58,45,.08) 0,rgba(30,58,45,.08) 1px,transparent 1px,transparent 44px)!important}.bars i{background:linear-gradient(180deg,#35c987,#159f67)!important;box-shadow:0 5px 16px rgba(22,167,101,.16)!important}
+
+/* Message report compact filter redesign */
+.report-filter{margin-bottom:14px}
+.filter-head{padding:10px 14px}
+.filter-head h3{font-size:14px}
+.filter-head p{font-size:8px}
+.filter-grid{grid-template-columns:.52fr 1fr 1fr 1fr 1.08fr 1.1fr 1.1fr 1.35fr .82fr;gap:7px;padding:10px 14px 12px}
+.filter-field{gap:4px}
+.filter-field label{font-size:8px;letter-spacing:.45px}
+.filter-field .input,.filter-field .select{height:35px;padding:7px 8px;font-size:10px;border-radius:8px}
+.date-wrap{position:relative;display:flex;align-items:center}
+.date-wrap .date-text{width:100%;padding-right:31px}
+.date-picker{position:absolute;right:4px;top:4px;width:27px;height:27px;border:0;border-radius:7px;background:linear-gradient(145deg,#eef4ed,#dce7df);color:#17613f;font-size:12px;font-weight:800;cursor:pointer;box-shadow:0 2px 0 #c7d2c9,inset 0 1px #fff}
+.date-picker:hover{transform:translateY(-1px);box-shadow:0 3px 0 #c7d2c9,inset 0 1px #fff}
+.native-date{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+.filter-clear{padding:6px 9px;font-size:8px}
+@media(max-width:1250px){.filter-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.message-field{grid-column:span 2}}
+@media(max-width:900px){.filter-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.message-field{grid-column:span 2}}
+@media(max-width:680px){.filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.message-field{grid-column:1/-1}}
