@@ -243,3 +243,28 @@
 .composer-card,.guide-card{background:linear-gradient(145deg,#fff,#f2efe7)!important}.composer-head,.guide-head,.card-head{border-bottom-color:rgba(30,58,45,.08)!important}.composer-head p,.guide-head p,.toolbar-stats span{color:#718078!important}.toolbar-stats b{color:#17613f!important}
 .live-pill,.secure-chip{background:rgba(22,167,101,.07)!important;color:#148957!important;border-color:rgba(22,167,101,.15)!important}.step-badge,.guide-icon{background:linear-gradient(145deg,#35c987,#159f67)!important;color:#fff!important;box-shadow:0 4px 0 #0d754b,0 9px 17px rgba(22,167,101,.15),inset 0 1px rgba(255,255,255,.4)!important}
 .shortcut{background:linear-gradient(145deg,#fff,#f0ede5)!important;border-color:rgba(30,58,45,.09)!important;box-shadow:0 12px 24px rgba(48,62,53,.09)!important}.shortcut b{color:#365248!important}.bars{background:repeating-linear-gradient(to bottom,rgba(30,58,45,.08) 0,rgba(30,58,45,.08) 1px,transparent 1px,transparent 44px)!important}.bars i{background:linear-gradient(180deg,#35c987,#159f67)!important;box-shadow:0 5px 16px rgba(22,167,101,.16)!important}
+
+
+/* Creative colorful 3D How-to guide */
+.guide-card{border:1px solid rgba(22,167,101,.18)!important;background:linear-gradient(145deg,#ffffff 0%,#f6f1e7 55%,#eef5ef 100%)!important;box-shadow:0 24px 48px rgba(48,62,53,.14),0 4px 12px rgba(48,62,53,.06),inset 0 1px #fff!important}
+.guide-head{padding:16px 17px!important;background:linear-gradient(135deg,rgba(22,167,101,.10),rgba(255,177,73,.10),rgba(83,128,255,.08));border-bottom:1px solid rgba(30,58,45,.08)!important}
+.guide-head h2{font-size:18px!important;color:#17372a!important}
+.guide-head p{font-size:10px!important;color:#6d7e76!important}
+.guide-icon{width:38px!important;height:38px!important;border-radius:12px!important;background:linear-gradient(145deg,#ffb347,#ff7a45)!important;box-shadow:0 5px 0 #d95c32,0 10px 20px rgba(255,122,69,.20),inset 0 1px rgba(255,255,255,.65)!important;transform:perspective(60px) rotateX(7deg)!important}
+.guide-list{padding:6px 15px 4px!important}
+.guide-step{position:relative;grid-template-columns:35px 1fr!important;gap:10px!important;padding:12px 8px!important;margin:3px 0;border:1px solid transparent;border-radius:13px;transition:.18s ease}
+.guide-step:hover{background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(235,247,239,.9));border-color:rgba(22,167,101,.12);transform:translateX(2px);box-shadow:0 8px 18px rgba(48,62,53,.07)}
+.guide-num{width:31px!important;height:31px!important;border-radius:10px!important;color:#fff!important;background:linear-gradient(145deg,#3bcf91,#159f67)!important;border:0!important;box-shadow:0 4px 0 #0d754b,0 8px 14px rgba(22,167,101,.16),inset 0 1px rgba(255,255,255,.55)!important}
+.guide-step:nth-child(2) .guide-num{background:linear-gradient(145deg,#5f8cff,#3b63d8)!important;box-shadow:0 4px 0 #2947a1,0 8px 14px rgba(59,99,216,.16),inset 0 1px rgba(255,255,255,.55)!important}
+.guide-step:nth-child(3) .guide-num{background:linear-gradient(145deg,#a875ff,#7542d5)!important;box-shadow:0 4px 0 #5630a4,0 8px 14px rgba(117,66,213,.16),inset 0 1px rgba(255,255,255,.55)!important}
+.guide-step:nth-child(4) .guide-num{background:linear-gradient(145deg,#ffb347,#f07a2b)!important;box-shadow:0 4px 0 #c15c1c,0 8px 14px rgba(240,122,43,.16),inset 0 1px rgba(255,255,255,.55)!important}
+.guide-step:nth-child(5) .guide-num{background:linear-gradient(145deg,#24c6dc,#159bb2)!important;box-shadow:0 4px 0 #0e7180,0 8px 14px rgba(21,155,178,.16),inset 0 1px rgba(255,255,255,.55)!important}
+.guide-step:nth-child(6) .guide-num{background:linear-gradient(145deg,#f36aff,#bd42d6)!important;box-shadow:0 4px 0 #8d2ca3,0 8px 14px rgba(189,66,214,.16),inset 0 1px rgba(255,255,255,.55)!important}
+.guide-step:nth-child(7) .guide-num{background:linear-gradient(145deg,#36d48d,#0f9b61)!important;box-shadow:0 4px 0 #087147,0 8px 14px rgba(15,155,97,.16),inset 0 1px rgba(255,255,255,.55)!important}
+.guide-step:not(:last-child):after{content:"";position:absolute;left:23px;bottom:-7px;width:1px;height:10px;background:linear-gradient(#cfe2d6,transparent);z-index:2}
+.guide-step h3{font-size:11px!important;color:#17372a!important;font-weight:800!important}
+.guide-step p{font-size:9px!important;line-height:1.55!important;color:#6f8078!important}
+.guide-step p b{color:#17613f!important}
+.guide-tip{margin:9px 12px 13px!important;padding:11px!important;border-radius:13px!important;background:linear-gradient(135deg,#fff4df,#eef9f1)!important;border:1px solid rgba(255,171,73,.18)!important;box-shadow:0 10px 22px rgba(48,62,53,.08),inset 0 1px #fff!important}
+.guide-tip>span{color:#f08a32!important}.guide-tip strong{color:#a85c1e!important;font-size:9px!important}.guide-tip small{color:#667b70!important;font-size:8px!important;line-height:1.55!important}
+@media(max-width:780px){.guide-step{padding:11px 5px!important}.guide-step p{font-size:9px!important}}
