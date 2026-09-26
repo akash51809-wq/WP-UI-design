@@ -307,3 +307,58 @@
 @media(max-width:1250px){.reference-boy-photo{right:245px!important;transform:scale(.9) rotate(-2deg)!important;transform-origin:center bottom}}
 @media(max-width:1050px){.reference-boy-photo{right:210px!important;transform:scale(.78) rotate(-2deg)!important;opacity:.92}}
 @media(max-width:760px){.reference-boy-photo{right:180px!important;opacity:.42}}
+
+
+/* Compact greeting hero — right-side artwork removed */
+.dashboard-page .dashboard-hero{
+  min-height:118px!important;
+  height:118px!important;
+  padding:20px 24px!important;
+  border-radius:22px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:18px!important;
+}
+.dashboard-page .dashboard-hero .hero-copy{
+  max-width:100%!important;
+}
+.dashboard-page .dashboard-hero .hero-copy h1{
+  font-size:24px!important;
+  line-height:1.05!important;
+  margin:5px 0 6px!important;
+}
+.dashboard-page .dashboard-hero .hero-copy p{
+  font-size:10px!important;
+  line-height:1.45!important;
+  max-width:650px!important;
+}
+.dashboard-page .dashboard-hero .eyebrow{
+  font-size:7px!important;
+  letter-spacing:1.5px!important;
+}
+.dashboard-page .dashboard-hero .actions{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  align-self:center!important;
+  flex:0 0 auto!important;
+}
+.dashboard-page .dashboard-hero .hero-visual,
+.dashboard-page .dashboard-hero .reference-scene,
+.dashboard-page .dashboard-hero .reference-boy-photo{
+  display:none!important;
+}
+@media(max-width:760px){
+  .dashboard-page .dashboard-hero{
+    height:auto!important;
+    min-height:112px!important;
+    padding:18px 20px!important;
+  }
+  .dashboard-page .dashboard-hero .hero-copy h1{
+    font-size:21px!important;
+  }
+  .dashboard-page .dashboard-hero .actions{
+    display:none!important;
+  }
+}
