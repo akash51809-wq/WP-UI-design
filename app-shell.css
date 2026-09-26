@@ -48,7 +48,7 @@ a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
 .nav-group{width:100%;position:relative}
 .nav-group>a{position:relative}
 .nav-caret{margin-left:auto;font-style:normal;color:#6f8d7e;font-size:10px;transition:.2s}
-.nav-group.is-open>.nav-caret,.nav-group:hover>.nav-caret{transform:rotate(180deg);color:var(--green)}
+.nav-group.is-open>.nav-caret,.nav-group.is-open>.nav-caret{transform:rotate(180deg);color:var(--green)}
 .nav-submenu{
   display:grid;
   gap:3px;
@@ -61,7 +61,7 @@ a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
   transform:translateY(-4px);
   transition:max-height .22s ease,opacity .18s ease,transform .22s ease;
 }
-.nav-group:hover .nav-submenu,.nav-group.is-open .nav-submenu{
+.nav-group.is-open .nav-submenu{
   max-height:48px;
   opacity:1;
   transform:none;
