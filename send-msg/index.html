@@ -55,45 +55,42 @@
           </div>
 
           <div class="composer-body">
-            <div class="quick-grid">
-              <div class="field">
+            <div class="quick-grid compact-top-grid">
+              <div class="field account-field">
                 <label>WHATSAPP ACCOUNT</label>
-                <select class="select">
+                <select class="select compact-select">
                   <option>Prince Goyal · +91 98765 43210</option>
                   <option>Business Account · +91 98123 45678</option>
                 </select>
               </div>
-              <div class="field">
+              <div class="field mode-field">
                 <label>SENDING MODE</label>
-                <select class="select" id="sendingMode">
+                <select class="select compact-select" id="sendingMode">
                   <option value="now">Send Now</option>
                   <option value="schedule">Schedule Message</option>
                 </select>
               </div>
-            </div>
-
-            <div class="schedule-panel" id="schedulePanel" hidden>
-              <div class="schedule-icon">◷</div>
-              <div class="schedule-fields">
-                <div class="field">
-                  <label>SCHEDULE DATE</label>
-                  <input class="input" id="scheduleDate" type="date">
+              <div class="schedule-panel compact-schedule" id="schedulePanel" hidden>
+                <div class="schedule-mini-head"><span>◷</span><label>SCHEDULE DATE & TIME</label></div>
+                <div class="schedule-mini-fields">
+                  <input class="input compact-input" id="scheduleDate" type="date" aria-label="Schedule date">
+                  <input class="input compact-input" id="scheduleTime" type="time" aria-label="Schedule time">
                 </div>
-                <div class="field">
-                  <label>SCHEDULE TIME</label>
-                  <input class="input" id="scheduleTime" type="time">
-                </div>
-              </div>
-              <div class="countdown-box">
-                <span>NEXT SEND IN</span>
-                <strong id="countdown">00:00:00:00</strong>
                 <small id="scheduleLabel">Choose date & time</small>
+                <strong id="countdown">00:00:00:00</strong>
               </div>
             </div>
 
-            <div class="field">
-              <div class="field-row"><label>RECIPIENT NUMBERS</label><span class="field-hint">Comma separated • 10 digit numbers</span></div>
-              <textarea class="textarea recipient-area" placeholder="+91 98765 43210, +91 98123 45678"></textarea>
+            <div class="field recipient-field">
+              <div class="field-row recipient-head">
+                <div><label>RECIPIENT NUMBERS</label><span class="recipient-note">Enter single or multiple numbers separated by commas (,)</span></div>
+                <div class="recipient-tools">
+                  <a class="round-tool sample-btn" id="sampleExcel" href="#" download="recipient-sample.csv" title="Download sample Excel">⇩<span>Sample</span></a>
+                  <label class="round-tool upload-btn" title="Upload Excel">⇧<span>Upload</span><input id="excelUpload" type="file" accept=".xlsx,.xls,.csv" hidden></label>
+                  <button type="button" class="round-tool duplicate-btn" id="removeDuplicates" title="Remove duplicates">⧉<span>Unique</span></button>
+                </div>
+              </div>
+              <textarea class="textarea recipient-area" id="recipientNumbers" placeholder="+91 98765 43210, +91 98123 45678"></textarea>
             </div>
 
             <div class="field">
@@ -110,6 +107,8 @@
                     </div>
                   </div>
                   <span class="tool-divider"></span>
+                  <button type="button" class="tool-btn voice-tool" id="voiceBtn">🎙 <span>Voice</span></button>
+                  <span class="tool-divider"></span>
                   <button type="button" class="tool-btn" id="clearMessage">⌫ <span>Clear</span></button>
                 </div>
               </div>
@@ -117,8 +116,6 @@
 
             <div class="action-row">
               <div class="secondary-actions">
-                <button type="button" class="btn compact-btn">▣ Upload Excel</button>
-                <button type="button" class="btn compact-btn">⌘ Remove Duplicates</button>
                 <button type="button" class="btn compact-btn">📎 Attachment</button>
               </div>
               <button type="button" class="btn primary send-btn" id="sendBtn"><span id="sendBtnText">➤ Send Message</span></button>
@@ -166,6 +163,11 @@
   const countdown=document.getElementById('countdown');
   const scheduleLabel=document.getElementById('scheduleLabel');
   const message=document.getElementById('messageText');
+  const recipients=document.getElementById('recipientNumbers');
+  const sampleExcel=document.getElementById('sampleExcel');
+  const excelUpload=document.getElementById('excelUpload');
+  const removeDuplicates=document.getElementById('removeDuplicates');
+  const voiceBtn=document.getElementById('voiceBtn');
   const charCount=document.getElementById('charCount');
   const emojiBtn=document.getElementById('emojiBtn');
   const emojiPopover=document.getElementById('emojiPopover');
@@ -240,6 +242,22 @@
 
   document.addEventListener('click',function(e){
     if(!emojiPopover.contains(e.target) && !emojiBtn.contains(e.target)) emojiPopover.classList.remove('show');
+  });
+
+  sampleExcel.addEventListener('click',function(){});
+  excelUpload.addEventListener('change',function(){
+    if(this.files.length){ this.closest('.upload-btn').classList.add('selected'); }
+  });
+  removeDuplicates.addEventListener('click',function(){
+    const parts=recipients.value.split(/[,\s\n]+/).map(v=>v.trim()).filter(Boolean);
+    const seen=new Set();
+    const clean=parts.filter(v=>{ const key=v.replace(/\D/g,''); if(!key || seen.has(key)) return false; seen.add(key); return true; });
+    recipients.value=clean.join(', ');
+  });
+  sampleExcel.href='data:text/csv;charset=utf-8,Number%0A9876543210%0A9812345678%0A';
+  voiceBtn.addEventListener('click',function(){
+    voiceBtn.classList.toggle('active');
+    voiceBtn.querySelector('span').textContent=voiceBtn.classList.contains('active')?'Voice On':'Voice';
   });
 
   clearBtn.addEventListener('click',function(){
