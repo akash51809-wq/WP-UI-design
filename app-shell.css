@@ -217,3 +217,10 @@ body,.app,.shell,.main,.content{font-size:15px!important;font-weight:600!importa
   .card-head h2,.card-head h3,.section-title{font-size:16px!important}
   .table th,.table td{font-size:12px!important}.input,.select,.textarea{font-size:13px!important}
 }
+
+
+/* Sidebar menu typography alignment */
+.nav-parent,.nav-parent b{font-size:14px!important;font-weight:800!important}
+.nav-submenu a,.nav-submenu a b{font-size:13px!important;font-weight:800!important}
+.nav-parent span,.nav-submenu a span{font-size:14px!important}
+.nav-submenu a{min-height:38px!important;padding:8px 10px!important}
