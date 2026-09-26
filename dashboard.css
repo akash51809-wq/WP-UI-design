@@ -362,3 +362,35 @@
     display:none!important;
   }
 }
+
+
+/* Extra compact greeting — pull stats upward into freed space */
+.dashboard-page .dashboard-hero{
+  min-height:82px!important;
+  height:82px!important;
+  padding:13px 22px!important;
+  border-radius:18px!important;
+  margin-bottom:10px!important;
+}
+.dashboard-page .dashboard-hero .hero-copy h1{
+  font-size:20px!important;
+  line-height:1!important;
+  margin:3px 0 4px!important;
+}
+.dashboard-page .dashboard-hero .hero-copy p{
+  font-size:9px!important;
+  line-height:1.3!important;
+}
+.dashboard-page .dashboard-hero .eyebrow{font-size:6px!important;letter-spacing:1.3px!important}
+.dashboard-page .dashboard-hero .actions{display:none!important}
+.dashboard-page .grid4{margin-bottom:12px!important}
+@media(max-width:760px){
+  .dashboard-page .dashboard-hero{
+    min-height:78px!important;
+    height:78px!important;
+    padding:12px 17px!important;
+    margin-bottom:9px!important;
+  }
+  .dashboard-page .dashboard-hero .hero-copy h1{font-size:18px!important}
+  .dashboard-page .dashboard-hero .hero-copy p{font-size:8px!important}
+}
