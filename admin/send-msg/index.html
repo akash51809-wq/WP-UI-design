@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Easy Recharge Solution — Send Message</title>
+<link rel="stylesheet" href="../../app-shell.css">
+<link rel="stylesheet" href="../../send-msg/page.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="../../admin/dashboard/"><span class="brand-mark">⚡</span><div><strong>Easy Recharge</strong><small>WhatsApp Automation</small></div></a>
+    <nav class="nav"><a href="../../admin/dashboard/" class=""><span>⌂</span><b>Dashboard</b></a><a href="../../admin/device/" class=""><span>▣</span><b>Device</b></a><a href="../../admin/send-msg/" class="active"><span>↗</span><b>Send message</b></a><a href="../../admin/inbox/" class=""><span>▤</span><b>Inbox</b></a><a href="../../admin/group/" class=""><span>▦</span><b>Group</b></a><div class="nav-group"><div class="nav-parent" role="button" tabindex="0" aria-expanded="false"><span>▥</span><b>Reports</b><i class="nav-caret">⌄</i></div><div class="nav-submenu"><a href="../../admin/msg-report/" class=""><span>↳</span><b>Msg Report</b></a></div></div><a href="../../admin/campaigns/" class=""><span>◇</span><b>Campaigns</b></a><a href="../../admin/templates/" class=""><span>▧</span><b>Templates</b></a><a href="../../admin/contacts/" class=""><span>♙</span><b>Contacts</b></a><a href="../../admin/settings/" class=""><span>⚙</span><b>Settings</b></a><a href="../../admin/plans/" class=""><span>◆</span><b>Plans</b></a><a href="../../admin/api-docs/" class=""><span>⌘</span><b>API Docs</b></a></nav><script data-menu-toggle="reports">(function(){document.querySelectorAll('.nav-parent').forEach(function(p){function t(){var g=p.parentElement,o=g.classList.toggle('is-open');p.setAttribute('aria-expanded',o?'true':'false')}p.addEventListener('click',t);p.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}})})})();</script>
+    <div class="sidebar-status"><span class="dot"></span><div><strong>WhatsApp Online</strong><small>All systems operational</small></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-title"><strong>Send Message</strong></div>
+      <div class="top-actions">
+        <button class="icon-btn" aria-label="Search">⌕</button>
+        <button class="icon-btn" aria-label="Notifications">♧</button>
+        <div class="user"><span class="avatar">PG</span><div><strong>Prince Goyal</strong><small>Super Admin</small></div></div>
+      </div>
+    </header>
+
+    <div class="content send-content">
+      <div class="send-layout">
+        <section class="composer-card card">
+          <div class="composer-head">
+            <div class="step-badge">01</div>
+            <div><h2>Message Composer</h2><p>Build your message in a few simple steps.</p></div>
+            <span class="secure-chip"><i></i> Session Connected</span>
+          </div>
+
+          <div class="composer-body">
+            <div class="quick-grid compact-top-grid">
+              <div class="field account-field">
+                <label>WHATSAPP ACCOUNT</label>
+                <select class="select compact-select">
+                  <option>Prince Goyal · +91 98765 43210</option>
+                  <option>Business Account · +91 98123 45678</option>
+                </select>
+              </div>
+              <div class="field mode-field">
+                <label>SENDING MODE</label>
+                <select class="select compact-select" id="sendingMode">
+                  <option value="now">Send Now</option>
+                  <option value="schedule">Schedule Message</option>
+                </select>
+              </div>
+              <div class="schedule-panel compact-schedule" id="schedulePanel" hidden>
+                <div class="schedule-mini-head"><span>◷</span><label>SCHEDULE DATE & TIME</label></div>
+                <div class="schedule-mini-fields">
+                  <input class="input compact-input" id="scheduleDate" type="date" aria-label="Schedule date">
+                  <input class="input compact-input" id="scheduleTime" type="time" aria-label="Schedule time">
+                </div>
+                <small id="scheduleLabel">Choose date & time</small>
+                <strong id="countdown">00:00:00:00</strong>
+              </div>
+            </div>
+
+            <div class="field recipient-field">
+              <div class="field-row recipient-head">
+                <div><label>RECIPIENT NUMBERS</label><span class="recipient-note">Enter single or multiple numbers separated by commas (,)</span></div>
+                <div class="recipient-tools">
+                  <a class="round-tool sample-btn" id="sampleExcel" href="#" download="recipient-sample.csv" title="Download sample Excel">⇩<span>Sample</span></a>
+                  <label class="round-tool upload-btn" title="Upload Excel">⇧<span>Upload</span><input id="excelUpload" type="file" accept=".xlsx,.xls,.csv" hidden></label>
+                  <button type="button" class="round-tool duplicate-btn" id="removeDuplicates" title="Remove duplicates">⧉<span>Unique</span></button>
+                </div>
+              </div>
+              <textarea class="textarea recipient-area" id="recipientNumbers" placeholder="+91 98765 43210, +91 98123 45678"></textarea>
+            </div>
+
+            <div class="field">
+              <div class="field-row"><label>MESSAGE</label><span class="field-hint" id="charCount">0 / 1000</span></div>
+              <div class="message-box">
+                <textarea class="textarea message-area" id="messageText" maxlength="1000" placeholder="Write your WhatsApp message here..."></textarea>
+                <div class="message-tools">
+                  <div class="emoji-wrap">
+                    <button type="button" class="tool-btn" id="emojiBtn" aria-label="Add emoji">☺ <span>Emoji</span></button>
+                    <div class="emoji-popover" id="emojiPopover">
+                      <button type="button">😀</button><button type="button">😊</button><button type="button">😍</button><button type="button">🎉</button><button type="button">🔥</button>
+                      <button type="button">👍</button><button type="button">❤️</button><button type="button">✅</button><button type="button">📢</button><button type="button">💰</button>
+                      <button type="button">🚀</button><button type="button">🙏</button><button type="button">🎯</button><button type="button">⭐</button><button type="button">💬</button>
+                    </div>
+                  </div>
+                  <span class="tool-divider"></span>
+                  <button type="button" class="tool-btn voice-tool" id="voiceBtn">🎙 <span>Voice</span></button>
+                  <span class="tool-divider"></span>
+                  <button type="button" class="tool-btn" id="clearMessage">⌫ <span>Clear</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-row">
+              <div class="secondary-actions">
+                <button type="button" class="btn compact-btn">📎 Attachment</button>
+              </div>
+              <button type="button" class="btn primary send-btn" id="sendBtn"><span id="sendBtnText">➤ Send Message</span></button>
+            </div>
+          </div>
+
+          <div class="composer-footer">
+            <span>Tip: Upload an Excel file for large recipient lists.</span>
+            <span>Max message length <b>1000</b> characters</span>
+          </div>
+        </section>
+
+        <aside class="guide-card card">
+          <div class="guide-head">
+            <div class="guide-icon">✦</div>
+            <div><h2>How to Use</h2><p>Follow these steps to send messages quickly and safely.</p></div>
+          </div>
+          <div class="guide-list">
+            <div class="guide-step"><span class="guide-num">01</span><div><h3>Choose WhatsApp</h3><p>Select your connected WhatsApp account from the dropdown.</p></div></div>
+            <div class="guide-step"><span class="guide-num">02</span><div><h3>Type Number</h3><p>Enter a 10-digit mobile number. Add commas to send to multiple numbers.</p></div></div>
+            <div class="guide-step"><span class="guide-num">03</span><div><h3>Upload Excel & Sample</h3><p>Use <b>Sample Excel</b> to check the format, then upload Excel or CSV. The system reads the <b>Number</b> column automatically.</p></div></div>
+            <div class="guide-step"><span class="guide-num">04</span><div><h3>Remove Duplicates</h3><p>Remove repeated and invalid numbers before sending so only clean, unique numbers remain.</p></div></div>
+            <div class="guide-step"><span class="guide-num">05</span><div><h3>Message, Emoji & Attachment</h3><p>Write your message, add emojis with <b>Emoji</b>, and attach photos, PDFs, or documents when needed.</p></div></div>
+            <div class="guide-step"><span class="guide-num">06</span><div><h3>Voice Message</h3><p>Use <b>Send as Voice</b> to convert your message into an MP3 voice note. Choose language in <b>Voice Options</b> and preview before sending.</p></div></div>
+            <div class="guide-step"><span class="guide-num">07</span><div><h3>Send Message</h3><p>Click <b>Send Message</b> or <b>Send as Voice</b> to start 1-by-1 delivery with a controlled sending interval.</p></div></div>
+          </div>
+          <div class="guide-tip">
+            <span>◆</span>
+            <div><strong>Safety Tip</strong><small>Use valid 10-digit Indian mobile numbers and follow WhatsApp messaging rules when sending bulk messages.</small></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <footer class="footer">© 2026 Easy Recharge Solution · Privacy Policy · Terms & Conditions · Support</footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  const mode=document.getElementById('sendingMode');
+  const panel=document.getElementById('schedulePanel');
+  const dateEl=document.getElementById('scheduleDate');
+  const timeEl=document.getElementById('scheduleTime');
+  const countdown=document.getElementById('countdown');
+  const scheduleLabel=document.getElementById('scheduleLabel');
+  const message=document.getElementById('messageText');
+  const recipients=document.getElementById('recipientNumbers');
+  const groupNumbers=sessionStorage.getItem('groupSelectedNumbers');
+  if(groupNumbers){recipients.value=groupNumbers;sessionStorage.removeItem('groupSelectedNumbers');}
+  const sampleExcel=document.getElementById('sampleExcel');
+  const excelUpload=document.getElementById('excelUpload');
+  const removeDuplicates=document.getElementById('removeDuplicates');
+  const voiceBtn=document.getElementById('voiceBtn');
+  const charCount=document.getElementById('charCount');
+  const emojiBtn=document.getElementById('emojiBtn');
+  const emojiPopover=document.getElementById('emojiPopover');
+  const clearBtn=document.getElementById('clearMessage');
+  const sendBtnText=document.getElementById('sendBtnText');
+  let timer;
+
+  function pad(n){return String(n).padStart(2,'0');}
+  function refreshCountdown(){
+    clearInterval(timer);
+    if(mode.value!=='schedule') return;
+    function tick(){
+      if(!dateEl.value || !timeEl.value){
+        countdown.textContent='00:00:00:00';
+        scheduleLabel.textContent='Choose date & time';
+        return;
+      }
+      const target=new Date(dateEl.value+'T'+timeEl.value+':00');
+      const diff=target.getTime()-Date.now();
+      if(diff<=0){
+        countdown.textContent='00:00:00:00';
+        scheduleLabel.textContent='Ready to send';
+        return;
+      }
+      const total=Math.floor(diff/1000);
+      const days=Math.floor(total/86400);
+      const hours=Math.floor((total%86400)/3600);
+      const mins=Math.floor((total%3600)/60);
+      const secs=total%60;
+      countdown.textContent=pad(days)+':'+pad(hours)+':'+pad(mins)+':'+pad(secs);
+      scheduleLabel.textContent=target.toLocaleString([], {dateStyle:'medium',timeStyle:'short'});
+    }
+    tick();
+    timer=setInterval(tick,1000);
+  }
+
+  function syncMode(){
+    const scheduled=mode.value==='schedule';
+    panel.hidden=!scheduled;
+    sendBtnText.textContent=scheduled?'◷ Schedule Message':'➤ Send Message';
+    if(scheduled){
+      const now=new Date();
+      const min=new Date(now.getTime()+15*60000);
+      dateEl.value=min.toISOString().slice(0,10);
+      timeEl.value=String(min.getHours()).padStart(2,'0')+':'+String(min.getMinutes()).padStart(2,'0');
+      refreshCountdown();
+    }else{
+      clearInterval(timer);
+    }
+  }
+
+  mode.addEventListener('change',syncMode);
+  dateEl.addEventListener('change',refreshCountdown);
+  timeEl.addEventListener('change',refreshCountdown);
+
+  message.addEventListener('input',function(){
+    charCount.textContent=message.value.length+' / 1000';
+  });
+
+  emojiBtn.addEventListener('click',function(e){
+    e.stopPropagation();
+    emojiPopover.classList.toggle('show');
+  });
+
+  emojiPopover.querySelectorAll('button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      message.value+=btn.textContent;
+      message.dispatchEvent(new Event('input'));
+      message.focus();
+    });
+  });
+
+  document.addEventListener('click',function(e){
+    if(!emojiPopover.contains(e.target) && !emojiBtn.contains(e.target)) emojiPopover.classList.remove('show');
+  });
+
+  sampleExcel.addEventListener('click',function(){});
+  excelUpload.addEventListener('change',function(){
+    if(this.files.length){ this.closest('.upload-btn').classList.add('selected'); }
+  });
+  removeDuplicates.addEventListener('click',function(){
+    const parts=recipients.value.split(/[,\s\n]+/).map(v=>v.trim()).filter(Boolean);
+    const seen=new Set();
+    const clean=parts.filter(v=>{ const key=v.replace(/\D/g,''); if(!key || seen.has(key)) return false; seen.add(key); return true; });
+    recipients.value=clean.join(', ');
+  });
+  sampleExcel.href='data:text/csv;charset=utf-8,Number%0A9876543210%0A9812345678%0A';
+  voiceBtn.addEventListener('click',function(){
+    voiceBtn.classList.toggle('active');
+    voiceBtn.querySelector('span').textContent=voiceBtn.classList.contains('active')?'Voice On':'Voice';
+  });
+
+  clearBtn.addEventListener('click',function(){
+    message.value='';
+    message.dispatchEvent(new Event('input'));
+    message.focus();
+  });
+
+  syncMode();
+})();
+</script>
+</body>
+</html>
