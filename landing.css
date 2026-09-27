@@ -113,3 +113,81 @@ p{font-size:clamp(14px,1.15vw,17px);line-height:1.75}
   .brand b{font-size:14px}
   .brand small{font-size:8px}
 }
+
+/* === HERO NAVIGATION UPGRADE === */
+.landing-nav{
+  min-height:88px;
+  padding:10px 4.5%;
+  gap:28px;
+  background:rgba(255,255,255,.78);
+  border-bottom:1px solid rgba(18,76,49,.09);
+  box-shadow:0 8px 35px rgba(20,65,45,.08);
+}
+.landing-nav .brand{flex-shrink:0}
+.landing-nav .logo{
+  width:50px;height:50px;border-radius:16px;font-size:24px;
+  box-shadow:0 12px 28px rgba(14,154,94,.28),inset 0 1px rgba(255,255,255,.75);
+}
+.landing-nav .brand b{font-size:19px;letter-spacing:-.25px}
+.landing-nav .brand small{font-size:9px;letter-spacing:1.8px}
+.landing-nav nav{
+  flex:1;
+  justify-content:center;
+  padding:8px;
+  gap:5px;
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(237,247,241,.78));
+  border:1px solid rgba(20,91,57,.13);
+  box-shadow:0 12px 30px rgba(22,83,55,.09),inset 0 1px rgba(255,255,255,.95);
+}
+.landing-nav nav a{
+  min-height:43px;
+  display:flex;
+  align-items:center;
+  padding:10px 17px;
+  border-radius:14px;
+  font-size:13px;
+  font-weight:850;
+  letter-spacing:.15px;
+}
+.landing-nav nav a:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 9px 20px rgba(20,120,75,.13);
+}
+.landing-nav nav a:before{
+  inset:auto 15px 6px;
+  height:3px;
+}
+.landing-nav .nav-cta{
+  min-height:46px;
+  padding:0 22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:15px;
+  font-size:13px;
+  font-weight:900;
+  box-shadow:0 14px 28px rgba(14,154,94,.24);
+  white-space:nowrap;
+}
+.landing-nav .nav-cta:hover{transform:translateY(-3px) scale(1.03)}
+@media(max-width:1100px){
+ .landing-nav{gap:14px;padding-left:24px;padding-right:24px}
+ .landing-nav nav{justify-content:flex-start;overflow-x:auto}
+ .landing-nav nav a{padding-left:13px;padding-right:13px;white-space:nowrap}
+}
+@media(max-width:800px){
+ .landing-nav{min-height:76px;padding:9px 18px}
+ .landing-nav .logo{width:44px;height:44px;font-size:21px}
+ .landing-nav .brand b{font-size:16px}
+ .landing-nav nav{max-width:52vw}
+ .landing-nav nav a{min-height:39px;font-size:11px;padding:8px 11px}
+ .landing-nav .nav-cta{min-height:41px;padding:0 14px;font-size:11px}
+}
+@media(max-width:520px){
+ .landing-nav{gap:9px}
+ .landing-nav .brand small{font-size:7px}
+ .landing-nav nav{max-width:43vw}
+ .landing-nav nav a{font-size:10px;padding:7px 9px}
+ .landing-nav .nav-cta{display:none}
+}
