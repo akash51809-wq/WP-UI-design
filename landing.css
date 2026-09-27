@@ -20,3 +20,96 @@ body:before{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:-1;
 @keyframes heroIn{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}@keyframes heroVisual{from{opacity:0;transform:scale(.88) rotateY(-12deg)}to{opacity:1;transform:none}}@keyframes deviceFloat{0%,100%{transform:perspective(1100px) rotateX(3deg) rotateY(-5deg) translateY(0)}50%{transform:perspective(1100px) rotateX(5deg) rotateY(3deg) translateY(-13px)}}@keyframes orbit{to{transform:translateZ(-20px) rotateX(55deg) rotateZ(360deg)}}@keyframes pulseGlow{50%{opacity:.65;transform:scale(1.03)}}@keyframes floatA{50%{transform:translate(-5px,-13px) rotate(-2deg)}}@keyframes floatB{50%{transform:translate(5px,12px) rotate(2deg)}}@keyframes iconFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(3deg)}}@keyframes stepPulse{0%,100%{opacity:.82}50%{opacity:1;transform:translateY(-5px)}}@keyframes stepIcon{50%{transform:rotate(8deg) translateY(-4px)}}@keyframes lineGlow{50%{opacity:.35;transform:scaleX(.85)}}@keyframes messageSlide{0%,70%,100%{transform:translateX(0)}78%{transform:translateX(5px)}}@keyframes barPulse{to{filter:brightness(1.2);transform:scaleY(1.04)}}@keyframes statusPulse{50%{background:rgba(50,205,135,.17)}}@keyframes dotBlink{50%{opacity:.35}}@keyframes faqOpen{from{opacity:.5;transform:scale(.99)}}to{opacity:1;transform:none}@keyframes ctaFloat{50%{transform:translateY(-4px)}}@keyframes scan{to{transform:translateX(70%)}}@keyframes contactPulse{50%{transform:translateY(-5px) scale(1.04)}}@keyframes ring{0%{transform:scale(.8);opacity:.8}100%{transform:scale(1.5);opacity:0}}@keyframes ambientDrift{to{transform:translate(2%, -2%) scale(1.04)}}
 @media(max-width:800px){.preview-frame{transform:none}.workspace-preview:after{display:none}.landing-cta{animation:none}.why-card:hover{transform:translateY(-5px)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* === LARGE TYPOGRAPHY + CREATIVE NAVIGATION === */
+:root{
+  --font-body:Inter,Segoe UI,Arial,sans-serif;
+  --nav-bg:rgba(255,255,255,.72);
+}
+body{font-family:var(--font-body);font-size:16px}
+p{font-size:clamp(14px,1.15vw,17px);line-height:1.75}
+.landing-nav{padding:0 5.5%;gap:22px}
+.landing-nav nav{
+  padding:7px;
+  gap:4px;
+  border:1px solid rgba(30,70,53,.10);
+  border-radius:18px;
+  background:rgba(255,255,255,.62);
+  box-shadow:0 10px 28px rgba(20,65,45,.07),inset 0 1px rgba(255,255,255,.8);
+}
+.landing-nav nav a{
+  position:relative;
+  padding:10px 13px;
+  border-radius:12px;
+  font-size:12px;
+  letter-spacing:.1px;
+  transition:transform .25s ease,color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+.landing-nav nav a:before{
+  content:"";
+  position:absolute;
+  inset:auto 12px 5px;
+  height:2px;
+  border-radius:99px;
+  background:linear-gradient(90deg,#35d38d,#0e9d61);
+  transform:scaleX(0);
+  transition:transform .25s ease;
+}
+.landing-nav nav a:hover{
+  color:#0b9b60;
+  background:rgba(35,211,141,.09);
+  transform:translateY(-2px);
+  box-shadow:0 7px 16px rgba(20,65,45,.07);
+}
+.landing-nav nav a:hover:before{transform:scaleX(1)}
+.nav-cta{
+  padding:13px 19px;
+  border-radius:14px;
+  font-size:12px;
+  box-shadow:0 12px 25px rgba(14,154,94,.18);
+}
+.brand b{font-size:17px}
+.brand small{font-size:9px}
+.hero p{font-size:clamp(16px,1.25vw,18px)}
+.trust span{font-size:12px}
+.why-card h3{font-size:21px}
+.why-card p{font-size:14px}
+.step h3{font-size:24px}
+.step p{font-size:13px}
+.feature-copy h3{font-size:clamp(38px,3.4vw,50px)}
+.feature-copy p{font-size:16px}
+.feature-copy li{font-size:13px}
+.ui-mock{font-size:14px}
+.mock-window-head{font-size:13px}
+.message-stack strong{font-size:16px}
+.group-list b{font-size:12px}
+.section-head p{font-size:15px}
+.security-grid h3{font-size:16px}
+.security-grid p{font-size:12px}
+.faq summary{font-size:15px}
+.faq details p{font-size:13px}
+.landing-cta p{font-size:14px}
+.footer-col a,.footer-brand p{font-size:12px}
+.footer-bottom{font-size:11px}
+.legal-page p{font-size:15px}
+.legal-page h2{font-size:24px}
+@media(max-width:1100px){
+  .landing-nav nav{overflow-x:auto;max-width:58vw;scrollbar-width:none}
+  .landing-nav nav::-webkit-scrollbar{display:none}
+}
+@media(max-width:800px){
+  .landing-nav{padding:12px 20px}
+  .landing-nav nav{display:flex;max-width:48vw;overflow-x:auto}
+  .landing-nav nav a{font-size:11px;white-space:nowrap;padding:9px 10px}
+  .nav-cta{font-size:11px;padding:11px 13px}
+  .brand b{font-size:15px}
+  .hero p{font-size:16px}
+  .why-card p,.feature-copy p{font-size:14px}
+}
+@media(max-width:520px){
+  .landing-nav nav{max-width:42vw}
+  .landing-nav nav a{font-size:10px;padding:8px}
+  .nav-cta{display:none}
+  .brand b{font-size:14px}
+  .brand small{font-size:8px}
+}
