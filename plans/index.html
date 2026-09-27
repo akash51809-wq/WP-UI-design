@@ -9,6 +9,7 @@
 <body>
 <header class="site-nav">
   <a class="brand" href="../"><span class="logo">⚡</span><span><b>Easy Recharge</b><small>WHATSAPP AUTOMATION</small></span></a>
+  <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav><a href="../">Home</a><a href="../#features">Features</a><a href="./">Pricing</a><a href="../api-docs/">API Docs</a><a href="../#contact">Contact</a></nav>
 </header>
 <main>
@@ -20,5 +21,5 @@
 </section>
 </main>
 <footer><span>© 2026 Easy Recharge Solution</span><span>Developed by <strong>PRINCE GOYAL</strong></span></footer>
-</body>
+<script>(()=>{const b=document.querySelector('.mobile-menu-toggle'),n=document.querySelector('.site-nav nav');if(!b||!n)return;b.addEventListener('click',()=>{const o=document.body.classList.toggle('mobile-menu-open');b.setAttribute('aria-expanded',o?'true':'false')});n.addEventListener('click',e=>{if(e.target.closest('a'))document.body.classList.remove('mobile-menu-open')})})();</script></body>
 </html>
