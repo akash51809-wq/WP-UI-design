@@ -214,3 +214,30 @@ body{padding-top:88px}
   html{scroll-padding-top:76px}
   body{padding-top:76px}
 }
+
+
+/* === CONTACT PAGE === */
+.contact-page{padding:70px 7% 90px;position:relative;z-index:1}
+.contact-hero{max-width:900px;margin:0 auto 45px;text-align:center}
+.contact-hero h1{font-size:clamp(42px,5vw,68px);line-height:1.05;letter-spacing:-2.4px;color:#173d2d;margin:12px 0 16px}
+.contact-hero p{max-width:680px;margin:0 auto;color:#71847c}
+.contact-grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;align-items:stretch}
+.contact-info,.contact-form{border:1px solid rgba(30,70,53,.1);border-radius:28px;background:rgba(255,255,255,.84);box-shadow:0 22px 55px rgba(25,67,48,.09);backdrop-filter:blur(16px)}
+.contact-info{padding:32px}
+.contact-info h2,.contact-form h2{font-size:25px;color:#173d2d;margin:0 0 10px}
+.contact-info>p,.contact-form>p{font-size:14px;color:#788a83;line-height:1.7;margin:0 0 25px}
+.contact-item{display:flex;gap:15px;align-items:flex-start;padding:17px 0;border-top:1px solid rgba(30,70,53,.08)}
+.contact-icon{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(145deg,#fff,#dcebe2);box-shadow:5px 7px 0 #d4e5db,0 12px 22px rgba(24,75,52,.09);font-size:20px}
+.contact-item b{display:block;color:#294d3e;font-size:14px;margin-bottom:4px}
+.contact-item span,.contact-item a{color:#71847c;font-size:13px;line-height:1.6;text-decoration:none}
+.contact-item a:hover{color:#0b9b60}
+.contact-form{padding:34px}
+.contact-form form{display:grid;gap:15px}
+.contact-form label{font-size:12px;font-weight:800;color:#345247}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;margin-top:7px;border:1px solid rgba(30,70,53,.13);border-radius:13px;background:#fbfdfb;padding:14px 15px;font:inherit;font-size:14px;color:#294d3e;outline:none;transition:border-color .2s,box-shadow .2s,transform .2s}
+.contact-form textarea{min-height:145px;resize:vertical}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:#20b978;box-shadow:0 0 0 4px rgba(32,185,120,.1)}
+.contact-form button{border:0;cursor:pointer;justify-content:center;margin-top:4px}
+.contact-note{font-size:11px;color:#87968f;text-align:center;margin:0}
+@media(max-width:800px){.contact-page{padding:55px 22px 70px}.contact-grid{grid-template-columns:1fr}.contact-info,.contact-form{padding:25px}}
+@media(max-width:520px){.contact-hero h1{font-size:40px}.contact-form input,.contact-form textarea,.contact-form select{font-size:16px}}
