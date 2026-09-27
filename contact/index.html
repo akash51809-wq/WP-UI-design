@@ -96,5 +96,6 @@
 (()=>{const b=document.querySelector('.mobile-menu-toggle'),n=document.querySelector('.landing-nav nav');if(!b||!n)return;b.addEventListener('click',()=>{const o=document.body.classList.toggle('mobile-menu-open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close menu':'Open menu')});n.addEventListener('click',e=>{if(e.target.closest('a')){document.body.classList.remove('mobile-menu-open');b.setAttribute('aria-expanded','false');}})})();
 </script>
 <a class="floating-contact" href="./" aria-label="Contact">✆</a>
+<script src="../site-nav.js"></script>
 </body>
 </html>
