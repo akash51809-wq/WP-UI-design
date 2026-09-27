@@ -22,7 +22,7 @@
   <div class="hero-copy">
     <div class="hero-badge"><span class="pulse"></span> WHATSAPP BUSINESS AUTOMATION</div>
     <span class="eyebrow">SMART WHATSAPP AUTOMATION</span>
-    <h1>Automate WhatsApp.<br><em>Grow your business.</em></h1>
+    <h1 class="typing-headline"><span id="typed-line">Automate WhatsApp.</span><br><em id="typed-subline">Grow your business.</em><span class="typing-cursor" aria-hidden="true"></span></h1>
     <p>Manage WhatsApp sessions, messaging, campaigns, contacts, API workflows and reports from one fast, organized workspace.</p>
     <div class="hero-actions"><a class="primary" href="#contact">Get Started <span>→</span></a><a class="secondary" href="api-docs/">View API Docs</a></div>
     <div class="trust"><span>✓ Built for business workflows</span><span>✓ API ready</span><span>✓ Designed to scale</span></div>
@@ -167,4 +167,6 @@
   const nav=document.querySelector('.landing-nav');
   addEventListener('scroll',()=>nav?.classList.toggle('scrolled',scrollY>20),{passive:true});
 })();
+</script><script>
+(()=>{const a=document.getElementById('typed-line'),b=document.getElementById('typed-subline');if(!a||!b)return;const first='Automate WhatsApp.',second='Grow your business.';a.textContent='';b.textContent='';let i=0,j=0;const type=()=>{if(i<first.length){a.textContent+=first[i++];setTimeout(type,75)}else if(j<second.length){b.textContent+=second[j++];setTimeout(type,75)}else{setTimeout(()=>{a.classList.add('typing-done')},250)}};setTimeout(type,500)})();
 </script></body></html>
