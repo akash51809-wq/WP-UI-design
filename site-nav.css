@@ -13,7 +13,7 @@ body{margin:0;width:100%;min-width:0;max-width:100%;overflow-x:hidden}
 .site-nav .mobile-menu-toggle{display:none;width:42px;height:42px;min-width:42px;padding:8px;border:0;border-radius:13px;background:#fff;box-shadow:0 8px 20px rgba(20,65,45,.1);cursor:pointer}
 .site-nav .mobile-menu-toggle span{display:block;height:2px;margin:5px 0;border-radius:99px;background:#173d2d}
 @media(max-width:1180px){
-.site-nav{grid-template-columns:minmax(0,1fr) auto;height:76px;min-height:76px;padding:9px 18px;gap:10px}
+.site-nav{grid-template-columns:minmax(0,1fr) auto;height:82px;min-height:82px;padding:10px 18px;gap:10px}
 .site-nav .brand{min-width:0;width:auto}
 .site-nav .brand>b,.site-nav .brand span>b{font-size:16px;overflow:hidden;text-overflow:ellipsis}
 .site-nav .brand small{font-size:8px;overflow:hidden;text-overflow:ellipsis}
@@ -29,14 +29,5 @@ body.mobile-menu-open .site-nav nav{display:flex}
 .site-nav .brand>b,.site-nav .brand span>b{font-size:14px}
 .site-nav .brand small{font-size:7px;letter-spacing:1.3px}
 }
-/* Shared page layout consistency */
-.site-nav + main{position:relative;z-index:1;min-width:0}
-.site-nav + main *{min-width:0}
-.security-page{max-width:1100px;margin:0 auto;padding:100px 7%}
-.security-page h1{font-size:clamp(42px,6vw,72px);color:#173d2d;letter-spacing:-2px;margin:12px 0 18px;line-height:1.05}
-.security-page>p{max-width:700px;color:#71847c;line-height:1.8;margin:0}
-.security-page .security-grid{margin-top:50px;grid-template-columns:repeat(2,minmax(0,1fr))}
-@media(max-width:800px){.security-page{padding:58px 18px}.security-page h1{font-size:clamp(38px,10vw,54px)}.security-page .security-grid{grid-template-columns:1fr;margin-top:32px}}
 
-/* Shared page layout consistency */
-.site-nav + main{position:relative;z-index:1;min-width:0}.site-nav + main *{min-width:0}.security-page{max-width:1100px;margin:0 auto;padding:100px 7%}.security-page h1{font-size:clamp(42px,6vw,72px);color:#173d2d;letter-spacing:-2px;margin:12px 0 18px;line-height:1.05}.security-page>p{max-width:700px;color:#71847c;line-height:1.8;margin:0}.security-page .security-grid{margin-top:50px;grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:800px){.security-page{padding:58px 18px}.security-page h1{font-size:clamp(38px,10vw,54px)}.security-page .security-grid{grid-template-columns:1fr;margin-top:32px}}
+.site-nav+main{position:relative;z-index:1;min-width:0}.site-nav+main>*{min-width:0}
